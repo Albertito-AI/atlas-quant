@@ -1,0 +1,27 @@
+Atlas Quant
+Copyright 2026 Albert Tan Sin Hon and contributors.
+
+This project was developed with AI assistance. Its software is independently
+written, with selected architectural ideas studied from:
+
+AI Investment Advisor
+https://github.com/neohsiung/AI-Investment-Advisor
+Revision 990a16c12436e83d0e977f48d6a81485deb6f251
+Upstream licence: Apache License 2.0.
+Upstream NOTICE credits Copyright 2026 Litov and contributors.
+No upstream source files, assets or configuration are bundled in Atlas Quant.
+
+The topic catalogue at:
+https://github.com/PlamenStilyianov/FinMathematics
+Revision c9bffd9b7795790e1ed23361ad393579658d6bd5
+informed the mathematical learning map. No repository licence was found.
+No books, notebooks, packages or binaries from that repository are included.
+Its materials are not relicensed by this project's licence.
+
+Standard mathematical methods are independently implemented and documented
+with author, university and publisher references in docs/SOURCE_STUDY.md
+and docs/MATHEMATICS.md. Dependencies retain their own licences.
+
+Atlas Quant is a research and educational tool. It makes no representation
+of investment performance, financial suitability, regulatory approval or
+independent certification. It has no broker integration or order execution.

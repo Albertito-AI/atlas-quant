@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "atlas-quant-research"
+version = "0.1.0"
+description = "Reproducible financial mathematics and evidence-led portfolio research"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{name = "Albert Tan Sin Hon"}]
+dependencies = ["numpy>=1.26,<3", "scipy>=1.13,<2"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Topic :: Office/Business :: Financial :: Investment",
+]
+
+[project.scripts]
+atlas-quant = "atlas_quant.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
