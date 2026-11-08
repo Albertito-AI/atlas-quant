@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="680" viewBox="0 0 1040 680" role="img" aria-labelledby="title desc">
+<title id="title">Inspect the observed loss tail</title><desc id="desc">Histogram of simulated single-period losses with empirical ninety-five per cent value at risk and expected shortfall. Expected shortfall uses fractional weighting of the worst five per cent of observations.</desc>
+<style>text{font-family:Arial,Helvetica,sans-serif} .muted{fill:#52677a}</style>
+<rect width="1040" height="680" rx="18" fill="#f7f9fb"/>
+<rect x="0" y="0" width="1040" height="8" fill="#007f80"/>
+<text x="36.00" y="39.00" font-size="12" fill="#007f80" text-anchor="start" font-weight="700">ATLAS QUANT  /  FINANCIAL VISUAL ATLAS</text>
+<text x="36.00" y="76.00" font-size="27" fill="#162c42" text-anchor="start" font-weight="700">Inspect the observed loss tail</text>
+<text x="36.00" y="103.00" font-size="13" fill="#52677a" text-anchor="start" font-weight="400">SYNTHETIC DATA  ·  Minimum-variance simulation  ·  443 one-observation net returns  ·  Loss = −return</text>
+<line x1="100.000" y1="141.000" x2="125.000" y2="141.000" stroke="#be581d" stroke-width="3" stroke-dasharray="6 4"/>
+<text x="134.00" y="145.00" font-size="12" fill="#162c42" text-anchor="start" font-weight="400">VaR 95%: 1.08%</text>
+<line x1="520.000" y1="141.000" x2="545.000" y2="141.000" stroke="#a53b4a" stroke-width="3" stroke-dasharray="3 3"/>
+<text x="554.00" y="145.00" font-size="12" fill="#162c42" text-anchor="start" font-weight="400">Expected shortfall 95%: 1.30%</text>
+<text x="100.00" y="192.00" font-size="16" fill="#162c42" text-anchor="start" font-weight="700">Distribution of net one-observation losses</text>
+<rect x="100.000" y="210.000" width="850.000" height="280.000" fill="#ffffff" rx="5"/>
+<line x1="100.000" y1="490.000" x2="950.000" y2="490.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="494.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">0</text>
+<line x1="100.000" y1="420.000" x2="950.000" y2="420.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="424.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">10</text>
+<line x1="100.000" y1="350.000" x2="950.000" y2="350.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="354.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">20</text>
+<line x1="100.000" y1="280.000" x2="950.000" y2="280.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="284.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">30</text>
+<line x1="100.000" y1="210.000" x2="950.000" y2="210.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="214.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">40</text>
+<line x1="100.000" y1="490.000" x2="100.000" y2="495.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="100.00" y="513.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">-2.0%</text>
+<line x1="206.250" y1="490.000" x2="206.250" y2="495.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="206.25" y="513.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">-1.5%</text>
+<line x1="312.500" y1="490.000" x2="312.500" y2="495.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="312.50" y="513.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">-1.0%</text>
+<line x1="418.750" y1="490.000" x2="418.750" y2="495.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="418.75" y="513.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">-0.5%</text>
+<line x1="525.000" y1="490.000" x2="525.000" y2="495.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="525.00" y="513.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">0.0%</text>
+<line x1="631.250" y1="490.000" x2="631.250" y2="495.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="631.25" y="513.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">0.5%</text>
+<line x1="737.500" y1="490.000" x2="737.500" y2="495.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="737.50" y="513.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">1.0%</text>
+<line x1="843.750" y1="490.000" x2="843.750" y2="495.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="843.75" y="513.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">1.5%</text>
+<line x1="950.000" y1="490.000" x2="950.000" y2="495.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="950.00" y="513.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">2.0%</text>
+<text x="525.00" y="538.00" font-size="12" fill="#162c42" text-anchor="middle" font-weight="400">Loss as a fraction of previous wealth (negative = gain)</text>
+<text x="45.00" y="350.00" font-size="12" fill="#162c42" text-anchor="middle" font-weight="400" transform="rotate(-90 45 350.0)">Observation count</text>
+<rect x="171.439" y="455.000" width="22.587" height="35.000" fill="#83bec0" rx="1"/>
+<rect x="195.626" y="469.000" width="22.587" height="21.000" fill="#83bec0" rx="1"/>
+<rect x="219.813" y="448.000" width="22.587" height="42.000" fill="#83bec0" rx="1"/>
+<rect x="244.000" y="455.000" width="22.587" height="35.000" fill="#83bec0" rx="1"/>
+<rect x="268.188" y="434.000" width="22.587" height="56.000" fill="#83bec0" rx="1"/>
+<rect x="292.375" y="448.000" width="22.587" height="42.000" fill="#83bec0" rx="1"/>
+<rect x="316.562" y="434.000" width="22.587" height="56.000" fill="#83bec0" rx="1"/>
+<rect x="340.749" y="420.000" width="22.587" height="70.000" fill="#83bec0" rx="1"/>
+<rect x="364.936" y="371.000" width="22.587" height="119.000" fill="#83bec0" rx="1"/>
+<rect x="389.124" y="336.000" width="22.587" height="154.000" fill="#83bec0" rx="1"/>
+<rect x="413.311" y="350.000" width="22.587" height="140.000" fill="#83bec0" rx="1"/>
+<rect x="437.498" y="329.000" width="22.587" height="161.000" fill="#83bec0" rx="1"/>
+<rect x="461.685" y="301.000" width="22.587" height="189.000" fill="#83bec0" rx="1"/>
+<rect x="485.873" y="301.000" width="22.587" height="189.000" fill="#83bec0" rx="1"/>
+<rect x="510.060" y="245.000" width="22.587" height="245.000" fill="#83bec0" rx="1"/>
+<rect x="534.247" y="252.000" width="22.587" height="238.000" fill="#83bec0" rx="1"/>
+<rect x="558.434" y="266.000" width="22.587" height="224.000" fill="#83bec0" rx="1"/>
+<rect x="582.622" y="308.000" width="22.587" height="182.000" fill="#83bec0" rx="1"/>
+<rect x="606.809" y="238.000" width="22.587" height="252.000" fill="#83bec0" rx="1"/>
+<rect x="630.996" y="336.000" width="22.587" height="154.000" fill="#83bec0" rx="1"/>
+<rect x="655.183" y="378.000" width="22.587" height="112.000" fill="#83bec0" rx="1"/>
+<rect x="679.371" y="385.000" width="22.587" height="105.000" fill="#83bec0" rx="1"/>
+<rect x="703.558" y="413.000" width="22.587" height="77.000" fill="#83bec0" rx="1"/>
+<rect x="727.745" y="448.000" width="22.587" height="42.000" fill="#83bec0" rx="1"/>
+<rect x="751.932" y="427.000" width="22.587" height="63.000" fill="#83bec0" rx="1"/>
+<rect x="776.119" y="448.000" width="22.587" height="42.000" fill="#83bec0" rx="1"/>
+<rect x="800.307" y="469.000" width="22.587" height="21.000" fill="#83bec0" rx="1"/>
+<rect x="824.494" y="476.000" width="22.587" height="14.000" fill="#83bec0" rx="1"/>
+<rect x="848.681" y="483.000" width="22.587" height="7.000" fill="#83bec0" rx="1"/>
+<rect x="872.868" y="476.000" width="22.587" height="14.000" fill="#83bec0" rx="1"/>
+<line x1="753.723" y1="490.000" x2="753.723" y2="210.000" stroke="#be581d" stroke-width="2.5" stroke-dasharray="6 4"/>
+<line x1="801.198" y1="490.000" x2="801.198" y2="210.000" stroke="#a53b4a" stroke-width="2.5" stroke-dasharray="3 3"/>
+<text x="100.00" y="562.00" font-size="13" fill="#162c42" text-anchor="start" font-weight="400">Tail mass: 443 × 5% = 22.15 observations; the boundary observation receives fractional weight.</text>
+<line x1="36.000" y1="605.000" x2="1004.000" y2="605.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="36.00" y="629.00" font-size="11" fill="#52677a" text-anchor="start" font-weight="400">VaR uses empirical rank ceil(0.95 × n); expected shortfall averages exactly the worst 5% tail mass.</text>
+<text x="36.00" y="648.00" font-size="11" fill="#52677a" text-anchor="start" font-weight="400">Binning is visual only: both measures use the unbinned returns. This sample does not bound future losses or unseen shocks.</text>
+</svg>

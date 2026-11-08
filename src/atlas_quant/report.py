@@ -138,7 +138,8 @@ def _line_chart(values: list, dates: list, label: str, chart_id: str,
     for values_, style in ((clean, 'series drawdown' if percentage else 'series'), (companion, 'series cash-series')):
         if values_:
             points = ' '.join(f'{x(i):.2f},{y(values_[i]):.2f}' for i in indices)
-            lines.append(f'<polyline class="{style}" points="{points}"/>')
+            colour = '#3263a5' if 'cash-series' in style else '#a44245' if percentage else '#07695b'
+            lines.append(f'<polyline class="{style}" points="{points}" fill="none" stroke="{colour}" stroke-width="2.5"/>')
     first = dates[0] if dates else 'First observation'
     last = dates[-1] if dates else f'Observation {len(clean)}'
     lines.append(f'<text x="{left}" y="275">{_text(first, 80)}</text>')
@@ -171,6 +172,116 @@ def _drawdowns(equity: list) -> list:
         peak = max(peak, value)
         result.append(value / peak - 1)
     return result
+
+
+def _matched_benchmark(benchmark: Mapping, equity: list, dates: list) -> list:
+    """Only compare complete, positive wealth paths on the same calendar and scale."""
+    values, observed_dates, _ = _equity_series(benchmark)
+    clean = [_number(v) for v in values]
+    primary = [_number(v) for v in equity]
+    if (not clean or len(clean) != len(primary) or len(dates) != len(primary)
+            or observed_dates != dates
+            or any(v is None or v <= 0 for v in clean + primary)):
+        return []
+    if not math.isclose(clean[0], primary[0], rel_tol=1e-10, abs_tol=0):
+        return []
+    return clean
+
+
+def _allocation_chart(backtest: Mapping) -> str:
+    """Show observed holdings and recorded cash, never inferred missing positions."""
+    symbols = _sequence(_mapping(backtest.get('dataset')).get('symbols'))
+    history = _sequence(backtest.get('weights_history'))
+    equity, dates, cash = _equity_series(backtest)
+    unavailable = '<div class="empty">Allocation chart requires complete, reconciled weights, cash and equity on the reported dates.</div>'
+    if not symbols or not history or not len(history) == len(equity) == len(cash) == len(dates):
+        return unavailable
+    if len(symbols) > 12 or len(history) > 100000:
+        return '<div class="empty">Allocation chart supports at most 12 assets and 100,000 observations. Exact holdings remain in the JSON.</div>'
+    rows = []
+    for weights, wealth, cash_value in zip(history, equity, cash):
+        row = [_number(v) for v in _sequence(weights)]
+        wealth, cash_value = _number(wealth), _number(cash_value)
+        if (len(row) != len(symbols) or any(v is None or not 0 <= v <= 1 for v in row)
+                or wealth is None or wealth <= 0 or cash_value is None or not 0 <= cash_value <= wealth):
+            return unavailable
+        row.append(cash_value / wealth)
+        if not math.isclose(sum(row), 1.0, rel_tol=0, abs_tol=1e-8):
+            return unavailable
+        rows.append(row)
+    colours = ('#087f8c', '#cb7950', '#6574bb', '#6d9855', '#ae5985', '#bb9839',
+               '#5088ba', '#8d795c', '#527f7a', '#965c53', '#8e78a3', '#7b8d45', '#8b9695')
+    # Uniform display sampling keeps output bounded; exact dates/weights remain in JSON.
+    indices = sorted({round(i * (len(rows) - 1) / min(699, max(1, len(rows) - 1)))
+                      for i in range(min(700, len(rows)))})
+    def x(i):
+        return 65 + 655 * i / max(1, len(rows) - 1)
+    def y(value):
+        return 245 - 220 * value
+    pieces = []
+    labels = [str(s) for s in symbols] + ['Cash']
+    for j, label in enumerate(labels):
+        upper = [(x(i), y(sum(rows[i][:j + 1]))) for i in indices]
+        lower = [(x(i), y(sum(rows[i][:j]))) for i in reversed(indices)]
+        points = ' '.join(f'{a:.2f},{b:.2f}' for a, b in upper + lower)
+        pieces.append(f'<polygon points="{points}" fill="{colours[j]}"><title>{_text(label, 100)}</title></polygon>')
+    for value in (0, .25, .5, .75, 1):
+        pieces.append(f'<line class="axis" x1="65" x2="720" y1="{y(value):.2f}" y2="{y(value):.2f}"/>'
+                      f'<text x="55" y="{y(value) + 4:.2f}" text-anchor="end">{100 * value:.0f}%</text>')
+    pieces += [f'<text x="65" y="275">{_text(dates[0], 80)}</text>',
+               f'<text x="720" y="275" text-anchor="end">{_text(dates[-1], 80)}</text>']
+    legend = []
+    for j, label in enumerate(labels):
+        legend.append(f'<span><svg width="12" height="12" aria-hidden="true"><rect width="12" height="12" fill="{colours[j]}"/></svg> {_text(label, 100)}</span>')
+    return ('<svg class="chart" viewBox="0 0 740 290" role="img" aria-labelledby="allocation-title allocation-desc">'
+            '<title id="allocation-title">Portfolio allocation through time</title>'
+            f'<desc id="allocation-desc">Stacked weights as a percentage of equity for {len(symbols)} assets and recorded cash. '
+            f'{len(indices)} displayed observations from {len(rows)} recorded observations.</desc>'
+            + ''.join(pieces) + '</svg><div class="legend">' + ''.join(legend) + '</div>'
+            '<p class="chart-caption">Observed holdings after each close, including cash before the first execution. '
+            'Weights drift with prices between trades. Up to 700 evenly spaced observations are displayed; JSON retains every observation.</p>')
+
+
+def _option_chart(options: Mapping) -> str:
+    """Plot recorded valuations and a valid sampling interval without rerunning models."""
+    mc = _mapping(options.get('monte_carlo'))
+    values = [_number(options.get('black_scholes')), _number(options.get('binomial')),
+              _number(_pick(mc, 'price', 'estimate'))]
+    low, high = _number(mc.get('ci_low')), _number(mc.get('ci_high'))
+    confidence = _number(mc.get('confidence'))
+    unavailable = '<div class="empty">Pricing chart requires three finite values and a valid Monte Carlo interval.</div>'
+    if (any(v is None for v in values) or low is None or high is None
+            or confidence is None or not 0 < confidence < 1
+            or not low <= values[2] <= high or any(abs(v) > 1e100 for v in values + [low, high])):
+        return unavailable
+    lower, upper = min(values + [low]), max(values + [high])
+    pad = (upper - lower) * .15 or max(abs(upper) * .01, .01)
+    lower, upper = lower - pad, upper + pad
+    def x(value):
+        return 165 + 530 * (value - lower) / (upper - lower)
+    pieces = []
+    for i in range(5):
+        value = lower + (upper - lower) * i / 4
+        pieces.append(f'<line class="axis" x1="{x(value):.2f}" x2="{x(value):.2f}" y1="20" y2="170"/>'
+                      f'<text x="{x(value):.2f}" y="195" text-anchor="middle">{value:.6g}</text>')
+    labels = ('Black–Scholes', 'Binomial tree', 'Monte Carlo')
+    for i, (label, value) in enumerate(zip(labels, values)):
+        row = 45 + 50 * i
+        pieces.append(f'<text x="145" y="{row + 4}" text-anchor="end">{label}</text>')
+        if i == 2:
+            pieces.append(f'<line class="series cash-series" stroke="#3263a5" stroke-width="2.5" x1="{x(low):.2f}" x2="{x(high):.2f}" y1="{row}" y2="{row}"/>'
+                          f'<line class="series cash-series" stroke="#3263a5" stroke-width="2.5" x1="{x(low):.2f}" x2="{x(low):.2f}" y1="{row - 6}" y2="{row + 6}"/>'
+                          f'<line class="series cash-series" stroke="#3263a5" stroke-width="2.5" x1="{x(high):.2f}" x2="{x(high):.2f}" y1="{row - 6}" y2="{row + 6}"/>')
+        pieces.append(f'<circle cx="{x(value):.2f}" cy="{row}" r="5" fill="currentColor"><title>{label}: {value:.6f}</title></circle>')
+    pieces.append('<text x="430" y="225" text-anchor="middle">Option value per underlying unit (supplied currency)</text>')
+    return ('<svg class="chart" viewBox="0 0 740 245" role="img" aria-labelledby="pricing-title pricing-desc">'
+            '<title id="pricing-title">Option valuation and simulation uncertainty</title>'
+            f'<desc id="pricing-desc">Black–Scholes {values[0]:.6f}, binomial {values[1]:.6f}, '
+            f'Monte Carlo {values[2]:.6f}. Recorded Monte Carlo interval {low:.6f} to {high:.6f}. '
+            'The horizontal axis is zoomed to compare numerical methods.</desc>'
+            + ''.join(pieces) + '</svg><p class="chart-caption">Zoomed horizontal scale. Monte Carlo interval: '
+            + _fmt(mc.get('confidence'), 'percent') + ' reported confidence. '
+            'This interval measures sampling uncertainty conditional on the model; it excludes model and parameter risk.</p>')
 
 
 def _holdings(backtest: Mapping) -> str:
@@ -256,6 +367,8 @@ def generate_report(data: dict) -> str:
         risk = _mapping(data.get('risk'))
     equity, dates, cash = _equity_series(backtest)
     drawdown = _sequence(backtest.get('drawdown')) or _drawdowns(equity)
+    benchmark_equity = _matched_benchmark(_mapping(data.get('benchmark')), equity, dates)
+    benchmark_drawdown = _drawdowns(benchmark_equity)
     synthetic = metadata.get('synthetic', backtest.get('synthetic', dataset.get('synthetic')))
     classification = ('SYNTHETIC DATA · RESEARCH DEMO' if synthetic is True else
                       'USER-SUPPLIED DATA · RESEARCH' if synthetic is False else
@@ -316,6 +429,7 @@ def generate_report(data: dict) -> str:
             _metric('Binomial value', _pick(options, 'binomial', 'binomial_price', 'crr'), 'Discrete tree · see recorded inputs', 'small'),
             _metric('Monte Carlo estimate', _pick(_mapping(options.get('monte_carlo')), 'price', 'estimate') if isinstance(options.get('monte_carlo'), Mapping) else options.get('monte_carlo'), 'Risk-neutral simulation · see interval below', 'small'),
         ]) + '</div>'
+        option_html += _option_chart(options)
         option_html += '<details><summary>Inspect option inputs and uncertainty</summary><pre class="provenance">' + _text(json.dumps(options, indent=2, sort_keys=True, default=str), 30000) + '</pre></details>'
     provenance = {key: metadata[key] for key in sorted(metadata) if key != 'title'}
     if 'integrity_sha256' in data:
@@ -349,6 +463,11 @@ def generate_report(data: dict) -> str:
             rows.append(f'<tr><th scope="row">{label}</th>{cells}</tr>')
         comparison_html = ('<section class="panel wide"><h2>Comparison and cost sensitivity</h2><p class="sub">A matched benchmark and one explicit cost scenario help test the interpretation.</p><div class="table-wrap"><table><thead><tr><th scope="col">Measure</th>' + headers + '</tr></thead><tbody>' + ''.join(rows) + '</tbody></table></div>')
         if benchmark:
+            comparison_html += ('<h3>Matched capital paths</h3><p class="sub">Both paths use the same dates and starting capital; values are net of recorded transaction costs.</p>'
+                                + (_line_chart(equity, dates, 'Base strategy and equal-weight benchmark equity', 'benchmark', benchmark_equity)
+                                   if benchmark_equity else '<div class="empty">Benchmark chart requires complete positive equity, identical dates and the same starting capital.</div>'))
+            if benchmark_equity:
+                comparison_html += '<div class="legend"><span><i class="swatch"></i>Base strategy</span><span><i class="swatch cash"></i>Equal-weight benchmark</span></div>'
             comparison_html += '<p class="chart-caption">Benchmark: ' + _text(benchmark.get('name', 'Name not supplied'), 500) + '. Cumulative return difference: ' + (_fmt(100 * benchmark['total_return_difference']) if _number(benchmark.get('total_return_difference')) is not None else 'Not available') + ' percentage points. This difference is not risk-adjusted alpha.</p>'
         if comparison:
             comparison_html += '<p class="chart-caption">Base cost: ' + _text(comparison.get('base_bps'), 50) + ' basis points; comparison: ' + _text(comparison.get('comparison_bps'), 50) + ' basis points. ' + _text(comparison.get('meaning', ''), 500) + '</p>'
@@ -367,7 +486,8 @@ def generate_report(data: dict) -> str:
 </section>
 <div class="grid"><section class="panel"><h2>Capital through time</h2><p class="sub">Net equity and uninvested cash across the reported window.</p>{_line_chart(equity, dates, 'Portfolio equity and cash', 'equity', cash)}<div class="legend"><span><i class="swatch"></i>Net equity</span><span><i class="swatch cash"></i>Cash, if supplied</span></div><p class="chart-caption">Charts retain endpoints and local extrema when long series are reduced for display. Exact values remain in the JSON output.</p></section>
 <section class="panel"><h2>Risk in context</h2><p class="sub">Observed sample statistics, with no predictive guarantee.</p>{_key_values(risk_rows)}<p class="chart-caption">Value at risk and expected shortfall use the supplied return sample and confidence level. Values express losses as fractions of equity.</p></section></div>
-<div class="grid"><section class="panel"><h2>Drawdown</h2><p class="sub">Distance below the running peak, including the initial reported capital.</p>{_line_chart(drawdown, dates, 'Portfolio drawdown', 'drawdown', percentage=True)}</section><section class="panel"><h2>Closing allocation</h2><p class="sub">Portfolio weights at the final observation.</p>{_holdings(backtest)}</section></div>
+<div class="grid"><section class="panel"><h2>Drawdown</h2><p class="sub">Distance below each path's own running peak, including the initial reported capital. Solid rose: strategy. Dashed blue: matched benchmark, when available.</p>{_line_chart(drawdown, dates, 'Strategy and matched benchmark drawdown', 'drawdown', second=benchmark_drawdown, percentage=True)}</section><section class="panel"><h2>Closing allocation</h2><p class="sub">Portfolio weights at the final observation.</p>{_holdings(backtest)}</section></div>
+<section class="panel wide"><h2>Allocation through time</h2><p class="sub">How portfolio capital moves between assets and cash. Weights are percentages of equity; configured caps apply to rebalance targets.</p>{_allocation_chart(backtest)}</section>
 {comparison_html}
 <section class="panel wide"><div class="section-heading"><div><h2>Research council</h2><p class="status-line">Mode: {_text(mode, 200)}. Findings reflect the recorded evidence.</p></div><span class="badge">{_text(gate, 200)}</span></div>{_council(council)}{f'<div class="notice"><strong>Dissent and qualifications:</strong> {_text(dissent)}</div>' if dissent else ''}{_evidence_table(council)}</section>
 <section class="panel wide"><h2>Derivative laboratory</h2><p class="sub">A separate pricing experiment. Model values are conditional on the stated assumptions.</p>{option_html}</section>

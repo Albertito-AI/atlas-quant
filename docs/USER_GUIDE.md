@@ -65,13 +65,22 @@ The HTML file works offline, includes no scripts or external resources, and adap
 
 - **Capital through time:** equity after modelled costs and the supplied cash series. Charts retain local extrema when reducing long series for display. The JSON preserves exact observations.
 - **Risk in context:** annualised return and sample volatility, Sharpe ratio, historical value at risk and expected shortfall. The tail statistics are measured over the observed return sample at the displayed confidence level.
-- **Drawdown:** the curve is non-positive and measures distance below the running peak. The summary tile and comparison table display the maximum loss as a positive magnitude.
+- **Drawdown:** the curves are non-positive and measure distance below each path's own running peak. A matched benchmark appears as a dashed line. The summary tile and comparison table display the maximum loss as a positive magnitude.
 - **Closing allocation:** final asset weights. A target cap applies at rebalancing; final drifted weights can differ.
+- **Allocation through time:** stacked observed asset and cash weights, reconciled against equity. The chart supports up to 12 assets and displays at most 700 evenly spaced observations; the JSON retains every observation. Missing or inconsistent holdings produce an explicit unavailable state.
+- **Matched capital paths:** the strategy and benchmark share a scale. The chart requires complete positive equity, identical dates and matching initial capital. It does not silently align different samples.
 - **Research council:** six deterministic role assessments, dissent, evidence references and review outcome. Expand the evidence ledger to inspect exact values and units.
-- **Derivative laboratory:** a separate option-pricing comparison with input parameters, Greeks, Monte Carlo standard error and confidence interval. It is not a price prediction for an asset.
+- **Derivative laboratory:** a separate option-pricing comparison with input parameters, Greeks, Monte Carlo standard error and confidence interval. The plot uses a zoomed axis to make method differences visible. The interval describes simulation sampling uncertainty, conditional on the model and inputs.
 - **Provenance:** dataset digest, configuration, council policy, gates, trace and hashes. These support reproducibility and detection of changes; they do not establish authorship or data truth.
 
 Short samples can produce unstable annualised statistics. An attractive historical result may reflect chance, parameter tuning, asset selection or omitted costs. Keep an untouched evaluation period and examine whether the conclusion survives reasonable changes in assumptions.
+
+The repository's [visual guide](VISUAL_GUIDE.md) provides six additional,
+reproducible financial figures with CSV observations and a source manifest.
+Regenerate them with `python scripts/build_visuals.py`, or check the committed
+evidence with `python scripts/build_visuals.py --check`. These gallery figures
+use a fixed minimum-variance experiment; the default CLI demo uses inverse
+volatility. Both settings are explicit, so their numerical results need not match.
 
 ## Understand the council
 

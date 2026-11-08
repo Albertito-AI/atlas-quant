@@ -216,6 +216,65 @@ class ReportTests(unittest.TestCase):
         self.assertIn('@media(max-width:450px)', html)
         self.assertIn('@media print', html)
 
+    def test_matched_paths_require_same_dates_and_starting_capital(self):
+        data = example()
+        data['benchmark'] = {'dates': list(data['backtest']['dates']),
+                             'equity_curve': [1000, 900, 990]}
+        html = generate_report(data)
+        self.assertIn('id="benchmark-title"', html)
+        drawdown_svg = re.search(r'<svg[^>]*aria-labelledby="drawdown-title.*?</svg>', html, re.S).group()
+        self.assertIn('class="series cash-series"', drawdown_svg)
+        # A matching array length alone must not imply a matching observation calendar.
+        data['benchmark']['dates'][1] = '2025-01-04'
+        html = generate_report(data)
+        self.assertNotIn('id="benchmark-title"', html)
+        self.assertIn('identical dates and the same starting capital', html)
+        data['benchmark']['dates'] = list(data['backtest']['dates'])
+        data['benchmark']['equity_curve'][0] = 999
+        self.assertNotIn('id="benchmark-title"', generate_report(data))
+
+    def test_allocation_chart_reconciles_cash_and_holdings(self):
+        data = example()
+        data['backtest']['weights_history'] = [[0, 0], [.5, .5], [.4, .6]]
+        html = generate_report(data)
+        self.assertIn('id="allocation-title"', html)
+        self.assertIn('2 assets and recorded cash', html)
+        self.assertIn('3 displayed observations from 3 recorded observations', html)
+        # First observation is wholly cash; replacing it with zero must fail reconciliation.
+        data['backtest']['cash_curve'][0] = 0
+        self.assertNotIn('id="allocation-title"', generate_report(data))
+        self.assertIn('complete, reconciled weights, cash and equity', generate_report(data))
+
+    def test_allocation_and_pricing_reject_nonfinite_or_fabricated_values(self):
+        data = example()
+        data['backtest']['weights_history'] = [[0, 0], [.5, .5], [.4, math.nan]]
+        data['options']['monte_carlo'] = {'price': 10.46, 'ci_low': 11, 'ci_high': 10,
+                                         'confidence': .95}
+        html = generate_report(data)
+        self.assertNotIn('id="allocation-title"', html)
+        self.assertNotIn('id="pricing-title"', html)
+        self.assertNotIn('points="nan', html)
+        data['options']['monte_carlo'] = {'price': 10.46, 'ci_low': 10.1, 'ci_high': math.inf}
+        self.assertNotIn('id="pricing-title"', generate_report(data))
+
+    def test_option_interval_is_recorded_and_does_not_imply_market_confidence(self):
+        data = example()
+        data['options']['monte_carlo'] = {'price': 10.46, 'ci_low': 10.1, 'ci_high': 10.8,
+                                         'confidence': .95}
+        html = generate_report(data)
+        self.assertIn('id="pricing-title"', html)
+        self.assertIn('Recorded Monte Carlo interval 10.100000 to 10.800000', html)
+        self.assertIn('95.00% reported confidence', html)
+        self.assertIn('excludes model and parameter risk', html)
+        self.assertIn('horizontal axis is zoomed', html)
+        for invalid_level in (None, True, 0, 1, 1.5, math.nan):
+            data['options']['monte_carlo']['confidence'] = invalid_level
+            self.assertNotIn('id="pricing-title"', generate_report(data))
+        data['options']['monte_carlo']['confidence'] = .95
+        # Missing tree output is not replaced by the analytical value or zero.
+        data['options']['binomial'] = None
+        self.assertNotIn('id="pricing-title"', generate_report(data))
+
     def test_text_limits_and_no_currency_assumption(self):
         data = example()
         data['metadata']['title'] = 'x' * 100000

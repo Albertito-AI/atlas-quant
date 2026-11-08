@@ -9,6 +9,7 @@ From the repository root, after installing the package dependencies:
 ```bash
 python -m unittest discover -s tests -v
 python scripts/security_check.py
+python scripts/build_visuals.py --check
 ```
 
 See the repository's CI configuration for the supported Python matrix and packaging checks. A committed workflow describes intended checks. Only a completed successful run establishes that they ran on GitHub.
@@ -28,6 +29,9 @@ See the repository's CI configuration for the supported Python matrix and packag
 | Data ingestion | Unsorted/duplicate dates, missing cells, non-finite/non-positive prices and bounded input | Enforcement of the local data contract |
 | Research evidence | Unknown citation, fabricated numeric input, altered hash and missing metric cases | Enforcement of structural evidence restrictions |
 | Report output | Hostile text and markup fixtures; content security policy inspection | Escaping and browser restrictions exercised by those fixtures |
+| Visual comparisons | Mismatched calendar/capital fixtures and reconciled cash/holdings | Prevents drawing a falsely aligned benchmark or fabricated allocation |
+| Pricing intervals | Missing/non-finite estimates, reversed intervals and invalid confidence levels | Unsupported numerical evidence remains visibly unavailable |
+| Committed gallery | Recomputed numerical evidence, saved-price digest, source/asset hashes and exact rendering checks | The checked figures correspond to recorded inputs and executable calculations within declared tolerances |
 
 Tests should be read alongside their implementation. Numerical tolerances are part of the specification. Broad tolerances can conceal an error; excessively narrow tolerances can become platform-dependent. Randomised tests use fixed seeds, while algebraic and hand-calculated cases provide nonrandom anchors.
 
