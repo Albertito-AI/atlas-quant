@@ -56,13 +56,30 @@ def simple_returns(prices) -> np.ndarray:
 
 
 def drawdown(returns) -> np.ndarray:
-    """Fractional drawdown <= 0, including the initial wealth observation (zero)."""
+    """Fractional drawdown <= 0, including initial wealth and exact bankruptcy.
+
+    Compensated log accumulation avoids losing recoverable wealth to absolute
+    underflow. Only the log distance from the running peak is exponentiated,
+    so a finite relative drawdown needs no representable absolute wealth.
+    """
     values = _returns(returns)
-    with np.errstate(over="ignore", invalid="ignore"):
-        wealth = np.r_[1.0, np.cumprod(1.0 + values)]
-    if not np.isfinite(wealth).all():
-        raise ValueError("wealth exceeds numeric range")
-    return wealth / np.maximum.accumulate(wealth) - 1.0
+    result = np.empty(len(values) + 1)
+    result[0] = 0.0
+    log_wealth = correction = peak = 0.0
+    for index, value in enumerate(values, start=1):
+        if value == -1:
+            # An actual complete loss is absorbing, unlike numerical underflow.
+            result[index:] = -1.0
+            break
+        increment = math.log1p(float(value)) - correction
+        updated = log_wealth + increment
+        correction = (updated - log_wealth) - increment
+        log_wealth = updated
+        if not math.isfinite(log_wealth):
+            raise ValueError("log wealth exceeds numeric range")
+        peak = max(peak, log_wealth)
+        result[index] = math.expm1(log_wealth - peak)
+    return result
 
 
 def performance_metrics(returns, periods_per_year: float = 252,

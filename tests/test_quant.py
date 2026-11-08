@@ -29,6 +29,22 @@ class ReturnTests(unittest.TestCase):
     def test_initial_loss_is_drawdown(self):
         np.testing.assert_allclose(drawdown([-.2, .25, -.1]), [0, -.2, 0, -.1], atol=1e-14)
 
+    def test_drawdown_recovers_after_wealth_underflow(self):
+        # Exact dyadic identity: 1100 halvings followed by 1100 doublings
+        # restore wealth to one. Absolute float64 wealth underflows in between.
+        returns = np.r_[np.full(1100, -.5), np.full(1100, 1.), -.25]
+        result = drawdown(returns)
+        self.assertAlmostEqual(result[-22], 2. ** -20 - 1., places=13)
+        self.assertAlmostEqual(result[-2], 0., places=13)
+        self.assertAlmostEqual(result[-1], -.25, places=13)
+
+    def test_drawdown_uses_relative_wealth_above_absolute_float_range(self):
+        # At a new peak, drawdown is zero regardless of the wealth scale.
+        result = drawdown(np.r_[np.full(1100, 1.), -.5, 1.])
+        np.testing.assert_array_equal(result[:1101], np.zeros(1101))
+        self.assertAlmostEqual(result[-2], -.5, places=13)
+        self.assertAlmostEqual(result[-1], 0., places=13)
+
     def test_bankruptcy_stays_zero(self):
         np.testing.assert_allclose(drawdown([-.2, -1, 10]), [0, -.2, -1, -1])
         result = performance_metrics([-.2, -1, .1])
