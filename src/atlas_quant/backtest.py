@@ -55,8 +55,16 @@ def strategy_weights(history_returns: np.ndarray, strategy: str, max_weight: flo
     score elsewhere, then applies the cap. It is a simple allocation heuristic,
     not a risk-parity optimiser. Minimum variance uses 10% diagonal covariance
     shrinkage; the shrinkage fraction is fixed rather than selected in sample.
+    History must contain real integer or floating-point values; complex,
+    boolean, textual and object arrays are rejected before allocation.
     """
-    history = np.asarray(history_returns, dtype=float)
+    try:
+        supplied = np.asarray(history_returns)
+        if supplied.dtype.kind not in "iuf":
+            raise ValueError("history must contain real numbers without coercion")
+        history = supplied.astype(float, copy=False)
+    except (TypeError, ValueError, OverflowError) as exc:
+        raise ValueError("history_returns must be a real numeric rectangular matrix without coercion") from exc
     if history.ndim != 2 or history.shape[0] < 2 or history.shape[1] < 1:
         raise ValueError("history_returns must be a matrix with at least two observations")
     if not np.isfinite(history).all() or (history <= -1).any():

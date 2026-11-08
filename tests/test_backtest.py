@@ -111,6 +111,23 @@ class BacktestTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             strategy_weights(np.ones((3, 2)), "unknown")
 
+    def test_strategy_history_rejects_coercion_before_allocation(self):
+        for history in (np.array([[.01 + .5j, .02], [.02, .01 + .8j]]),
+                        np.zeros((2, 2), dtype=complex),
+                        np.ones((2, 2), dtype=bool),
+                        np.array([[".01", ".02"], [".02", ".01"]]),
+                        np.zeros((2, 2), dtype=object)):
+            for strategy in ("equal_weight", "inverse_volatility", "minimum_variance"):
+                with self.subTest(dtype=history.dtype, strategy=strategy), self.assertRaises(ValueError):
+                    strategy_weights(history, strategy)
+
+    def test_strategy_history_accepts_supported_real_dtypes(self):
+        for dtype in (np.int32, np.uint32, np.float32, np.float64):
+            for strategy in ("equal_weight", "inverse_volatility", "minimum_variance"):
+                with self.subTest(dtype=dtype, strategy=strategy):
+                    history = np.array([[0, 1], [1, 0], [0, 0]], dtype=dtype)
+                    np.testing.assert_allclose(strategy_weights(history, strategy), [.5, .5])
+
     def test_rebalance_calendar_and_unliquidated_endpoint(self):
         data = synthetic_prices(30, 2)
         result = run_backtest(data, strategy="equal_weight", lookback=5, rebalance_every=7)
