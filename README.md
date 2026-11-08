@@ -2,6 +2,8 @@
 
 **Financial research you can inspect, reproduce and challenge.**
 
+For educators and research teams: [explore the workshop and team pilot](docs/WORKSHOP_OFFERS.md) or [email Albert](mailto:travelingbert@gmail.com?subject=Atlas%20Quant%20enquiry).
+
 Atlas Quant combines financial mathematics, portfolio experiments and a structured
 research council in a small, offline Python package. A single command produces
 an accessible HTML report and a machine-readable evidence record. The demo needs
