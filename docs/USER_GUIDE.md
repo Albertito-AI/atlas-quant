@@ -56,6 +56,14 @@ A 40% maximum weight requires at least three assets for a fully invested portfol
 
 CSV structure cannot prove that prices are correctly adjusted, currency-consistent or free of survivorship bias. The data provider and researcher remain responsible for those properties. Select the universe and test design before interpreting results. The toolkit does not download price histories or incorporate delisted securities for you.
 
+When using the Python API directly, `PriceDataset` price matrices and
+`strategy_weights` return histories must contain real integer or floating-point
+values. Complex arrays, including zero-imaginary values, and boolean, textual
+or object arrays are rejected before calculation. This prevents NumPy casting
+from silently discarding an imaginary component or inventing numerical prices
+from a different input type. The CSV loader still parses its documented numeric
+text cells explicitly before constructing the dataset.
+
 ## Choose a strategy and conventions
 
 | Setting | Meaning |

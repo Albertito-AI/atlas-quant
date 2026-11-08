@@ -30,6 +30,8 @@ class PriceDataset:
     Adjustments and currency cannot be verified from a CSV. The caller is
     responsible for both and for avoiding survivorship-biased asset selection.
     Dates need not be consecutive trading days. No missing-value fill is done.
+    Direct price arrays must use real integer or floating-point values;
+    complex, boolean, textual and object arrays are not coerced into prices.
     """
 
     dates: tuple[str, ...]
@@ -57,11 +59,13 @@ class PriceDataset:
             raise ValueError("dates must be unique and strictly increasing")
         try:
             supplied = np.asarray(self.prices)
+            if supplied.dtype.kind not in "iuf":
+                raise ValueError("prices must contain real numbers without coercion")
             if supplied.shape != (len(dates), len(symbols)):
                 raise ValueError("prices must have one complete row per date and column per symbol")
             prices = np.array(supplied, dtype=float, copy=True)
-        except (ValueError, TypeError) as exc:
-            raise ValueError("prices must be a numeric rectangular matrix") from exc
+        except (ValueError, TypeError, OverflowError) as exc:
+            raise ValueError("prices must be a real numeric rectangular matrix without coercion") from exc
         if prices.shape != (len(dates), len(symbols)):
             raise ValueError("prices must have one complete row per date and column per symbol")
         if not np.isfinite(prices).all() or (prices <= 0).any():

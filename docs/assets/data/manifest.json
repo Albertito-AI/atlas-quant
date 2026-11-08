@@ -5,8 +5,8 @@
   "dataset_sha256": "60f4fa829bce46f082d4d16ade006f9fcb7e65bed407efe2d902eaf82a3b6f49",
   "sources": {
     "scripts/build_visuals.py": "9a363874e3da00bd58bd8584c2ab1986f987e0161ca2afa56126630a19b3d817",
-    "src/atlas_quant/data.py": "6f78c8d26c2d1aabfd748922b1fc020a216e8552d2a84d510510acc114b6b23b",
-    "src/atlas_quant/backtest.py": "d96c322bc13f29a5cb74d646780f069c8cb875c12f31683b4b5960a55b168c4c",
+    "src/atlas_quant/data.py": "85ecc1a1cbf10fa97e5827e4e8995b3a0789bb5b840fbc4ba5389c95e970d3fa",
+    "src/atlas_quant/backtest.py": "ee455269be0641fb717c0707786c4241cde899732e897625753127d2dde4f2ff",
     "src/atlas_quant/quant.py": "a72bbeae306d662d978b2fcdbe3c72d94b8ce7543a1c377f61e97ce46cff9408"
   },
   "meaning": "Environment and source hashes for this generated bundle, not an audit or a signature.",

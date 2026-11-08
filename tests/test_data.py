@@ -56,6 +56,25 @@ class DataTests(unittest.TestCase):
             with self.subTest(prices=prices), self.assertRaises(ValueError):
                 PriceDataset(("2024-01-02", "2024-01-03"), ("A",), prices, "fixture")
 
+    def test_dataset_rejects_coerced_prices(self):
+        # Complex arrays previously lost their imaginary part with only a
+        # warning. Boolean, textual and object arrays are also not real prices.
+        for prices in (np.array([[100 + 2j], [101 + 3j]]),
+                       np.array([[100 + 0j], [101 + 0j]]),
+                       np.array([[True], [True]]),
+                       np.array([["100"], ["101"]]),
+                       np.array([[100.], [101.]], dtype=object)):
+            with self.subTest(dtype=prices.dtype), self.assertRaises(ValueError):
+                PriceDataset(("2024-01-02", "2024-01-03"), ("A",), prices, "fixture")
+
+    def test_dataset_preserves_supported_real_price_dtypes(self):
+        for dtype in (np.int32, np.uint32, np.float32, np.float64):
+            with self.subTest(dtype=dtype):
+                data = PriceDataset(("2024-01-02", "2024-01-03"), ("A",),
+                                    np.array([[100], [101]], dtype=dtype), "fixture")
+                np.testing.assert_array_equal(data.prices, [[100.], [101.]])
+                self.assertEqual(data.prices.dtype, np.dtype(float))
+
     def test_limits(self):
         path = self.write_csv("date,A,B\n2024-01-02,100,50\n2024-01-03,101,51\n")
         for kwargs in ({"max_rows": 1}, {"max_assets": 1}, {"max_assets": 101}, {"max_rows": True}):
