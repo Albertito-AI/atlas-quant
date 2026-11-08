@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="850" viewBox="0 0 1040 850" role="img" aria-labelledby="title desc">
+<title id="title">04  Optimise against several possible worlds</title><desc id="desc">Target allocations for equal weight, optimisation of the probabilistic mixture alone, and minimisation of the worst CVaR across all scenario sets. Bars compare fitted tail loss; outlined points show separate held-out draws under the same models.</desc>
+<style>text{font-family:Arial,Helvetica,sans-serif} .muted{fill:#52677a}</style>
+<rect width="1040" height="850" rx="18" fill="#f7f9fb"/>
+<rect x="0" y="0" width="1040" height="8" fill="#007f80"/>
+<text x="36.00" y="39.00" font-size="12" fill="#007f80" text-anchor="start" font-weight="700">ATLAS QUANT  /  PROBABILISTIC AGENT LAB</text>
+<text x="36.00" y="76.00" font-size="27" fill="#162c42" text-anchor="start" font-weight="700">04  Optimise against several possible worlds</text>
+<text x="36.00" y="103.00" font-size="13" fill="#52677a" text-anchor="start" font-weight="400">MODEL OUTPUT  ·  Long-only targets  ·  60% cap  ·  Empirical CVaR at 95%  ·  No execution or fees</text>
+<line x1="100.000" y1="138.000" x2="125.000" y2="138.000" stroke="#007f80" stroke-width="3"/>
+<text x="134.00" y="142.00" font-size="12" fill="#162c42" text-anchor="start" font-weight="400">SYNTH_1</text>
+<line x1="320.000" y1="138.000" x2="345.000" y2="138.000" stroke="#4674bd" stroke-width="3"/>
+<text x="354.00" y="142.00" font-size="12" fill="#162c42" text-anchor="start" font-weight="400">SYNTH_2</text>
+<line x1="540.000" y1="138.000" x2="565.000" y2="138.000" stroke="#be581d" stroke-width="3"/>
+<text x="574.00" y="142.00" font-size="12" fill="#162c42" text-anchor="start" font-weight="400">SYNTH_3</text>
+<line x1="760.000" y1="138.000" x2="785.000" y2="138.000" stroke="#8153a2" stroke-width="3"/>
+<text x="794.00" y="142.00" font-size="12" fill="#162c42" text-anchor="start" font-weight="400">SYNTH_4</text>
+<text x="100.00" y="172.00" font-size="16" fill="#162c42" text-anchor="start" font-weight="700">Research target weights</text>
+<rect x="100.000" y="190.000" width="850.000" height="180.000" fill="#ffffff" rx="5"/>
+<line x1="100.000" y1="370.000" x2="950.000" y2="370.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="374.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">0%</text>
+<line x1="100.000" y1="325.000" x2="950.000" y2="325.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="329.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">25%</text>
+<line x1="100.000" y1="280.000" x2="950.000" y2="280.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="284.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">50%</text>
+<line x1="100.000" y1="235.000" x2="950.000" y2="235.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="239.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">75%</text>
+<line x1="100.000" y1="190.000" x2="950.000" y2="190.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="194.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">100%</text>
+<line x1="241.667" y1="370.000" x2="241.667" y2="375.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="241.67" y="393.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">Equal weight</text>
+<line x1="525.000" y1="370.000" x2="525.000" y2="375.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="525.00" y="393.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">Mixture only</text>
+<line x1="808.333" y1="370.000" x2="808.333" y2="375.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="808.33" y="393.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">Worst-case CVaR</text>
+<text x="525.00" y="418.00" font-size="12" fill="#162c42" text-anchor="middle" font-weight="400">Allocation rule</text>
+<text x="45.00" y="280.00" font-size="12" fill="#162c42" text-anchor="middle" font-weight="400" transform="rotate(-90 45 280.0)">Target portfolio weight</text>
+<rect x="181.667" y="325.000" width="120.000" height="45.000" fill="#007f80" rx="0"/>
+<text x="241.67" y="351.50" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="700">25.0%</text>
+<rect x="181.667" y="280.000" width="120.000" height="45.000" fill="#4674bd" rx="0"/>
+<text x="241.67" y="306.50" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="700">25.0%</text>
+<rect x="181.667" y="235.000" width="120.000" height="45.000" fill="#be581d" rx="0"/>
+<text x="241.67" y="261.50" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="700">25.0%</text>
+<rect x="181.667" y="190.000" width="120.000" height="45.000" fill="#8153a2" rx="0"/>
+<text x="241.67" y="216.50" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="700">25.0%</text>
+<rect x="465.000" y="370.000" width="120.000" height="0.000" fill="#007f80" rx="0"/>
+<rect x="465.000" y="298.000" width="120.000" height="72.000" fill="#4674bd" rx="0"/>
+<text x="525.00" y="338.00" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="700">40.0%</text>
+<rect x="465.000" y="298.000" width="120.000" height="0.000" fill="#be581d" rx="0"/>
+<rect x="465.000" y="190.000" width="120.000" height="108.000" fill="#8153a2" rx="0"/>
+<text x="525.00" y="248.00" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="700">60.0%</text>
+<rect x="748.333" y="370.000" width="120.000" height="0.000" fill="#007f80" rx="0"/>
+<rect x="748.333" y="262.000" width="120.000" height="108.000" fill="#4674bd" rx="0"/>
+<text x="808.33" y="320.00" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="700">60.0%</text>
+<rect x="748.333" y="220.744" width="120.000" height="41.256" fill="#be581d" rx="0"/>
+<text x="808.33" y="245.37" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="700">22.9%</text>
+<rect x="748.333" y="190.000" width="120.000" height="30.744" fill="#8153a2" rx="0"/>
+<text x="808.33" y="209.37" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="700">17.1%</text>
+<line x1="100.000" y1="442.000" x2="125.000" y2="442.000" stroke="#007f80" stroke-width="3"/>
+<text x="134.00" y="446.00" font-size="12" fill="#162c42" text-anchor="start" font-weight="400">Equal weight</text>
+<line x1="380.000" y1="442.000" x2="405.000" y2="442.000" stroke="#4674bd" stroke-width="3"/>
+<text x="414.00" y="446.00" font-size="12" fill="#162c42" text-anchor="start" font-weight="400">Mixture only</text>
+<line x1="660.000" y1="442.000" x2="685.000" y2="442.000" stroke="#be581d" stroke-width="3"/>
+<text x="694.00" y="446.00" font-size="12" fill="#162c42" text-anchor="start" font-weight="400">Worst-case CVaR</text>
+<text x="100.00" y="477.00" font-size="16" fill="#162c42" text-anchor="start" font-weight="700">Same candidate, different tail-loss assumptions</text>
+<rect x="100.000" y="495.000" width="850.000" height="165.000" fill="#ffffff" rx="5"/>
+<line x1="100.000" y1="660.000" x2="950.000" y2="660.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="664.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">0.0%</text>
+<line x1="100.000" y1="618.750" x2="950.000" y2="618.750" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="622.75" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">1.6%</text>
+<line x1="100.000" y1="577.500" x2="950.000" y2="577.500" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="581.50" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">3.3%</text>
+<line x1="100.000" y1="536.250" x2="950.000" y2="536.250" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="540.25" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">4.9%</text>
+<line x1="100.000" y1="495.000" x2="950.000" y2="495.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="499.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">6.5%</text>
+<line x1="241.667" y1="660.000" x2="241.667" y2="665.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="241.67" y="683.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">Regime mixture</text>
+<line x1="525.000" y1="660.000" x2="525.000" y2="665.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="525.00" y="683.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">Correlation stress</text>
+<line x1="808.333" y1="660.000" x2="808.333" y2="665.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="808.33" y="683.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">Crash stress</text>
+<text x="525.00" y="708.00" font-size="12" fill="#162c42" text-anchor="middle" font-weight="400">Scenario set</text>
+<text x="45.00" y="577.50" font-size="12" fill="#162c42" text-anchor="middle" font-weight="400" transform="rotate(-90 45 577.5)">CVaR of one-observation loss</text>
+<rect x="178.667" y="626.628" width="38.000" height="33.372" fill="#007f80" rx="2"/>
+<circle cx="197.667" cy="624.041" r="4" fill="#ffffff" stroke="#162c42" stroke-width="1.3"/>
+<rect x="222.667" y="643.710" width="38.000" height="16.290" fill="#4674bd" rx="2"/>
+<circle cx="241.667" cy="643.643" r="4" fill="#ffffff" stroke="#162c42" stroke-width="1.3"/>
+<rect x="266.667" y="634.561" width="38.000" height="25.439" fill="#be581d" rx="2"/>
+<circle cx="285.667" cy="631.698" r="4" fill="#ffffff" stroke="#162c42" stroke-width="1.3"/>
+<rect x="462.000" y="517.130" width="38.000" height="142.870" fill="#007f80" rx="2"/>
+<circle cx="481.000" cy="516.522" r="4" fill="#ffffff" stroke="#162c42" stroke-width="1.3"/>
+<rect x="506.000" y="519.926" width="38.000" height="140.074" fill="#4674bd" rx="2"/>
+<circle cx="525.000" cy="520.202" r="4" fill="#ffffff" stroke="#162c42" stroke-width="1.3"/>
+<rect x="550.000" y="554.320" width="38.000" height="105.680" fill="#be581d" rx="2"/>
+<circle cx="569.000" cy="552.436" r="4" fill="#ffffff" stroke="#162c42" stroke-width="1.3"/>
+<rect x="745.333" y="517.396" width="38.000" height="142.604" fill="#007f80" rx="2"/>
+<circle cx="764.333" cy="520.798" r="4" fill="#ffffff" stroke="#162c42" stroke-width="1.3"/>
+<rect x="789.333" y="595.748" width="38.000" height="64.252" fill="#4674bd" rx="2"/>
+<circle cx="808.333" cy="597.833" r="4" fill="#ffffff" stroke="#162c42" stroke-width="1.3"/>
+<rect x="833.333" y="554.320" width="38.000" height="105.680" fill="#be581d" rx="2"/>
+<circle cx="852.333" cy="559.086" r="4" fill="#ffffff" stroke="#162c42" stroke-width="1.3"/>
+<text x="100.00" y="736.00" font-size="12" fill="#162c42" text-anchor="start" font-weight="400">Bars: fitting scenarios. Outlined points: separate held-out draws; weights remain fixed.</text>
+<line x1="36.000" y1="775.000" x2="1004.000" y2="775.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="36.00" y="799.00" font-size="11" fill="#52677a" text-anchor="start" font-weight="400">Worst-case optimisation minimises the largest supplied tail loss. Its trade-off depends on the deliberately constructed stress sets.</text>
+<text x="36.00" y="818.00" font-size="11" fill="#52677a" text-anchor="start" font-weight="400">Targets omit fees and liquidity and have no expected-return target. Held-out draws test these models only; they offer no market guarantee.</text>
+</svg>
