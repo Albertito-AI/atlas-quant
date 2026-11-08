@@ -45,6 +45,21 @@ class SecurityPolicyTests(unittest.TestCase):
         workflow = 'permissions:\n  contents: read\n- uses: actions/checkout@' + 'a' * 40
         self.assertEqual(scanner.inspect_workflow(workflow), [])
 
+
+    def test_exact_pinned_atlas_caller_has_narrow_write_exception(self):
+        caller = scanner.APPROVED_ATLAS_CALLER
+        path = scanner.APPROVED_ATLAS_PATH
+        self.assertEqual(scanner.inspect_workflow(caller, path), [])
+        self.assertTrue(any(rule == 'write-token-permission' for _, rule in scanner.inspect_workflow(caller)))
+        self.assertTrue(any(rule == 'write-token-permission' for _, rule in scanner.inspect_workflow(caller, Path('.github/workflows/other.yml'))))
+        for mutation in (
+            caller.replace('actions: write', 'contents: write'),
+            caller.replace('2e849a36fd6a2b93d1a968efd4fcccdb7523132b', '0' * 40),
+            caller + '  extra-job: {}\n',
+        ):
+            with self.subTest(mutation=mutation[-50:]):
+                self.assertTrue(scanner.inspect_workflow(mutation, path), 'Modified caller must lose exception')
+
     def test_privileged_workflow_rejected(self):
         result = scanner.inspect_workflow('on: pull_request_target\npermissions: write-all\nruns-on: self-hosted\n')
         self.assertTrue(any(rule == 'privileged-workflow-trigger' for _, rule in result))
