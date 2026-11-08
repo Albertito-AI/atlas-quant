@@ -403,7 +403,7 @@ def main():
         for name, content in files.items():
             path = args.output / name
             path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text(content, encoding="utf-8")
+            path.write_text(content, encoding="utf-8", newline="\n")
         print(f"Wrote {len(files)} files to {args.output}")
     return 0
 

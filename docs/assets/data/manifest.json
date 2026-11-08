@@ -4,7 +4,7 @@
   "scipy": "1.17.0",
   "dataset_sha256": "60f4fa829bce46f082d4d16ade006f9fcb7e65bed407efe2d902eaf82a3b6f49",
   "sources": {
-    "scripts/build_visuals.py": "51809fb3526a82c3001d60747b6b9f492a4ed264871fdb5b4d671c2b00a3a70c",
+    "scripts/build_visuals.py": "9a363874e3da00bd58bd8584c2ab1986f987e0161ca2afa56126630a19b3d817",
     "src/atlas_quant/data.py": "6f78c8d26c2d1aabfd748922b1fc020a216e8552d2a84d510510acc114b6b23b",
     "src/atlas_quant/backtest.py": "d96c322bc13f29a5cb74d646780f069c8cb875c12f31683b4b5960a55b168c4c",
     "src/atlas_quant/quant.py": "040331c3728bfc74b4b6fadcf870dfe1ec6dd3a16a9b6dbc1fa510f0db18528e"

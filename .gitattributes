@@ -1,0 +1,6 @@
+# These text files participate in exact-byte visual provenance checks.
+# Keep their working-tree bytes stable even when core.autocrlf is enabled.
+*.py text eol=lf
+/docs/assets/**/*.svg text eol=lf
+/docs/assets/**/*.csv text eol=lf
+/docs/assets/**/*.json text eol=lf
