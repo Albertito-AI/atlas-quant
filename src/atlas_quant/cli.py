@@ -44,6 +44,11 @@ def main(argv=None) -> int:
     _settings(demo)
     demo.add_argument("--days", type=int, default=504)
     demo.add_argument("--assets", type=int, default=4)
+    lab = commands.add_parser("agent-lab", help="Run the synthetic five-stage probabilistic agent lab")
+    lab.add_argument("--seed", type=int, default=2026)
+    lab.add_argument("--observations", type=int, default=320)
+    lab.add_argument("--scenario-count", type=int, default=600)
+    lab.add_argument("--output", type=Path, default=Path("output/agent-lab"))
     backtest = commands.add_parser("backtest", help="Analyse a local adjusted-close CSV")
     backtest.add_argument("csv", type=Path)
     _settings(backtest)
@@ -70,6 +75,22 @@ def main(argv=None) -> int:
                              initial_cash=args.initial_cash, max_weight=args.max_weight,
                              periods_per_year=args.periods_per_year, seed=args.seed)
             _write_bundle(result, args.output)
+        elif args.command == "agent-lab":
+            from .agent_lab import build_agent_lab
+            from .lab_report import generate_lab_report
+            if args.output.exists():
+                raise ValueError("output directory already exists; choose a new --output path")
+            result = build_agent_lab(seed=args.seed, observations=args.observations,
+                                     scenario_count=args.scenario_count)
+            payload = json.dumps(result, indent=2, ensure_ascii=False, allow_nan=False) + "\n"
+            html = generate_lab_report(result)
+            args.output.mkdir(parents=True, exist_ok=False)
+            (args.output / "lab.json").write_text(payload, encoding="utf-8")
+            (args.output / "report.html").write_text(html, encoding="utf-8")
+            print(f"Agent-lab report: {args.output / 'report.html'}")
+            print(f"Evidence record: {args.output / 'lab.json'}")
+            print(f"Research outcome: {result['governance']['outcome']}")
+            print(f"SHA-256: {result['integrity_sha256']}")
         elif args.command == "options":
             inputs = {key: value for key, value in vars(args).items() if key != "command"}
             print(json.dumps(option_comparison(**inputs), indent=2, allow_nan=False))

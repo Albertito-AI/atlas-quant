@@ -65,6 +65,27 @@ can be checked against the [mathematical conventions](docs/MATHEMATICS.md) and
 
 ## Run it
 
+### Explore five stages of agent reasoning
+
+The [agent lab](docs/AGENT_LAB.md) adds Bayesian regime beliefs, sequential expert
+weighting, joint stress scenarios, robust tail-loss optimisation and explicit
+research gates. Five new figures connect the equations to their numerical
+evidence. Separate validation draws challenge the allocation before review.
+
+![Joint scenario clouds from the five-stage agent lab](docs/assets/agent-lab/scenario-clouds.svg)
+
+```bash
+# After installing the package:
+atlas-quant agent-lab --output output/agent-lab
+```
+
+This is an implemented offline mathematical demonstrator. Its models and
+scenarios are synthetic and explicitly parameterised. The guide separately
+describes a proposed future AI-planner integration; general intelligence or
+superhuman market performance has not been demonstrated.
+
+### Install and run the original portfolio demo
+
 Requires Python 3.11 or newer. Install from this source checkout:
 
 ```bash
@@ -194,6 +215,7 @@ The workshop includes a [reproducible synthetic case](docs/WORKSHOP_CASE.md).
 
 - [User guide](docs/USER_GUIDE.md)
 - [Visual guide: charts, workflow and reproducible data](docs/VISUAL_GUIDE.md)
+- [Five-stage agent lab and future integration boundaries](docs/AGENT_LAB.md)
 - [Reproducible workshop case](docs/WORKSHOP_CASE.md)
 - [Mathematical conventions and sources](docs/MATHEMATICS.md)
 - [Council architecture and external review schema](docs/AGENT_DESIGN.md)

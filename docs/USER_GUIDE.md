@@ -21,6 +21,22 @@ A complete demo runs portfolio research, a matched equal-weight benchmark, one h
 
 ## Analyse your own prices
 
+For the separate probabilistic workflow demonstration, run:
+
+```sh
+atlas-quant agent-lab --output output-agent-lab
+```
+
+This produces `lab.json` and an offline `report.html` covering regime inference,
+fixed forecast hypotheses, joint scenarios, robust allocation and research
+gates. It uses only generated data and explicitly declared models. See the
+[five-stage agent lab](AGENT_LAB.md) for equations, examples and the distinction
+between implemented numerical tools and proposed future model-driven agents.
+`atlas_quant.agent_lab.verify_agent_lab(record)` checks the lab's content digest;
+the CLI `verify` command handles the original backtest report schema.
+
+### Local price CSV
+
 Supply a local UTF-8 CSV with an exact `date` column followed by unique asset symbols:
 
 ```csv

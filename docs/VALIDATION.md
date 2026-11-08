@@ -10,6 +10,7 @@ From the repository root, after installing the package dependencies:
 python -m unittest discover -s tests -v
 python scripts/security_check.py
 python scripts/build_visuals.py --check
+python scripts/build_agent_lab.py --check
 ```
 
 See the repository's CI configuration for the supported Python matrix and packaging checks. A committed workflow describes intended checks. Only a completed successful run establishes that they ran on GitHub.
@@ -32,6 +33,9 @@ See the repository's CI configuration for the supported Python matrix and packag
 | Visual comparisons | Mismatched calendar/capital fixtures and reconciled cash/holdings | Prevents drawing a falsely aligned benchmark or fabricated allocation |
 | Pricing intervals | Missing/non-finite estimates, reversed intervals and invalid confidence levels | Unsupported numerical evidence remains visibly unavailable |
 | Committed gallery | Recomputed numerical evidence, saved-price digest, source/asset hashes and exact rendering checks | The checked figures correspond to recorded inputs and executable calculations within declared tolerances |
+| Forward probabilistic inference | Exhaustive small hidden-state enumeration, analytic Bayes updates and future-data perturbations | Correct prefix filtering and prediction-before-observation timing on the fixtures |
+| Scenario allocation | Analytic minimax cases, independently ordered fractional tails and original-unit objective reconciliation | Constrained worst-scenario risk calculation and explicit solver failure handling |
+| Agent-lab boundaries | Held-out inputs excluded from optimisation, resolvable trace references and missing-evidence gate tests | Declared separation between fitting, numerical challenge and research permission |
 
 Tests should be read alongside their implementation. Numerical tolerances are part of the specification. Broad tolerances can conceal an error; excessively narrow tolerances can become platform-dependent. Randomised tests use fixed seeds, while algebraic and hand-calculated cases provide nonrandom anchors.
 

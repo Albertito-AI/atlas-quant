@@ -36,6 +36,8 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Verify reproducible visual evidence
         run: python scripts/build_visuals.py --check
+      - name: Verify probabilistic agent-lab evidence
+        run: python scripts/build_agent_lab.py --check
       - name: Validate installed dependencies
         run: python -m pip check
 
