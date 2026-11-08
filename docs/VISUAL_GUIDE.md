@@ -34,6 +34,13 @@ numerical library versions are expected; a changed image alone does not establis
 a financial error. Preserve the fixed settings when comparing
 revisions rather than searching for a more attractive path.
 
+The tracked Python sources and generated SVG, CSV and JSON assets use LF line
+endings, enforced by `.gitattributes`. Both gallery generators also write LF
+explicitly on every platform. This keeps exact source and asset hashes stable
+when Git's `core.autocrlf` setting is enabled; the verifiers still reject changed
+bytes. A checkout created before this policy may retain old CRLF working files.
+Use a fresh checkout to apply the attributes without overwriting local edits.
+
 | Portfolio input | Fixed gallery setting |
 |---|---|
 | Price rows and assets | 504 rows, four generated assets |

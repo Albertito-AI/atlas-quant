@@ -24,7 +24,7 @@ class VisualEvidenceTests(unittest.TestCase):
         for name, content in self.bundle.items():
             path = root / name
             path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text(content, encoding="utf-8")
+            path.write_text(content, encoding="utf-8", newline="\n")
 
     def test_cash_entry_and_drawdown_reconcile_to_wealth(self):
         p = self.evidence["performance"]

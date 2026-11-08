@@ -5,7 +5,7 @@
   "evidence_sha256": "88c3054e18b45f6e5daa89a60bee5d6236e19c73a8f3e6534720e2fa2f4c36ae",
   "sources": {
     "scripts/build_agent_lab.py": "4ccd5096bad801373f9f1e7be289eb1335a1ae7a03935f76f78c5b20c6e8ac87",
-    "scripts/build_visuals.py": "51809fb3526a82c3001d60747b6b9f492a4ed264871fdb5b4d671c2b00a3a70c",
+    "scripts/build_visuals.py": "9a363874e3da00bd58bd8584c2ab1986f987e0161ca2afa56126630a19b3d817",
     "src/atlas_quant/agent_lab.py": "42156ce1855564adf2e353a2842f178aa71a5a1267dd9596de1d117a29dbb653",
     "src/atlas_quant/beliefs.py": "cfbdccf12bd541f3fadb9b3d494eec2b8f02542abb4061713b350d0ef4406a29",
     "src/atlas_quant/scenarios.py": "1f5d3988de37751f4754b6b7d4583fe9ad169fa4c8ec47e877cde12af5fb8793",
