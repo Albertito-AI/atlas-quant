@@ -27,4 +27,14 @@ A pull request should identify the concrete problem, resulting behaviour, test e
 
 No credentials, personal financial data, generated executable code or broker connectivity belong in ordinary contributions. Treat narratives and CSV files as untrusted. Preserve the offline boundary and HTML escaping. Follow [SECURITY.md](SECURITY.md) for private vulnerability reporting.
 
-Changes to GitHub Actions must pin external actions to verified full commit SHAs, retain read-only permissions and avoid privileged pull-request triggers. Review dependency update proposals and rerun numerical tests. A green CI run is evidence for those checks at that commit, not a certification of security or predictive value.
+Changes to GitHub Actions must pin external actions to verified full commit SHAs, retain read-only permissions and avoid privileged pull-request triggers. The existing Atlas monitoring caller is a narrow exception: its exact path and pinned content are recognised by the policy checker for Actions retry access; it also carries issue-reporting permission. This exception does not extend to application or pull-request test workflows. Review dependency update proposals and rerun numerical tests. A green CI run is evidence for those checks at that commit, not a certification of security or predictive value.
+
+## Visual evidence
+
+Regenerate the committed figures with `python scripts/build_visuals.py` and check
+them with `python scripts/build_visuals.py --check`. Use the documented fixed
+synthetic seed and settings. Keep numerical data beside the SVGs, declare units
+and sample windows, and retain unfavourable outcomes. Distinguish model sampling
+uncertainty from future investment risk. Changes to a plot must preserve the
+underlying financial meaning and accessible descriptions. See the
+[visual guide](docs/VISUAL_GUIDE.md).

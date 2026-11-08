@@ -14,6 +14,55 @@ of investment suitability, predictive accuracy or excess returns. The council's
 six roles are deterministic analytical rules. Optional external reviews select
 validated critique templates; this release does not call language models.
 
+## See the calculations
+
+![Synthetic minimum-variance and equal-weight wealth paths with their drawdowns](docs/assets/research-performance.svg)
+
+**Reproducible synthetic experiment.** These paths come from the package's own
+backtest engine: four generated assets, seed 42, a 60-observation estimation
+window, rebalancing every 21 observations, a 50% target-weight cap and 10 basis
+points of cost on each absolute buy or sell notional. Both strategies use the
+same calendar, execution lag and cost convention. The curves demonstrate the
+accounting and comparison; they provide no evidence of market profitability.
+
+[Open the visual guide](docs/VISUAL_GUIDE.md) for six reproducible charts,
+their numerical data, equations, assumptions and source-code links.
+
+| Inspect a question | Visual evidence |
+|---|---|
+| What does the strategy earn and lose in the simulation? | [Wealth and drawdown](docs/VISUAL_GUIDE.md#wealth-and-drawdown) |
+| How sensitive is the result to trading costs? | [Cost scenarios](docs/VISUAL_GUIDE.md#transaction-costs) |
+| How do dependence and allocation relate? | [Correlation and holdings](docs/VISUAL_GUIDE.md#allocation-and-dependence) |
+| How does an option respond to changing inputs? | [Prices and sensitivities](docs/VISUAL_GUIDE.md#option-prices-and-sensitivities) |
+| Do separate valuation methods agree? | [Numerical convergence and sampling error](docs/VISUAL_GUIDE.md#pricing-convergence) |
+| What does a tail-risk statistic measure? | [Observed loss distribution](docs/VISUAL_GUIDE.md#tail-risk) |
+
+![European option pricing convergence and Monte Carlo sampling intervals](docs/assets/pricing-convergence.svg)
+
+The pricing experiment compares numerical methods against the analytic value
+under identical declared model assumptions. Its intervals measure Monte Carlo
+sampling error, not uncertainty about future market prices.
+
+### From data to an inspectable result
+
+```mermaid
+flowchart TD
+    A["Local prices or seeded synthetic paths"] --> B{"Valid dates, prices and dimensions?"}
+    B -->|No| X["Reject input with an error"]
+    B -->|Yes| C["Past returns only: estimate target weights"]
+    C --> D["Next-close execution and self-financing fees"]
+    D --> E["Net wealth, drawdown and tail losses"]
+    D --> F["Matched baseline and cost scenario"]
+    E --> G["Six rule-based research roles"]
+    F --> H["Offline HTML and inspectable JSON"]
+    G --> H
+```
+
+The council records evidence and challenges. Its outcomes are `research_only`
+or `blocked_for_review`. Every chart has declared inputs; every interpretation
+can be checked against the [mathematical conventions](docs/MATHEMATICS.md) and
+[validation tests](docs/VALIDATION.md).
+
 ## Run it
 
 Requires Python 3.11 or newer. Install from this source checkout:
@@ -144,6 +193,7 @@ The workshop includes a [reproducible synthetic case](docs/WORKSHOP_CASE.md).
 ## Further reading
 
 - [User guide](docs/USER_GUIDE.md)
+- [Visual guide: charts, workflow and reproducible data](docs/VISUAL_GUIDE.md)
 - [Reproducible workshop case](docs/WORKSHOP_CASE.md)
 - [Mathematical conventions and sources](docs/MATHEMATICS.md)
 - [Council architecture and external review schema](docs/AGENT_DESIGN.md)

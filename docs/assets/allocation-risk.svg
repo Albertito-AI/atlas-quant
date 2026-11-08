@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="680" viewBox="0 0 1040 680" role="img" aria-labelledby="title desc">
+<title id="title">From observed variation to weights</title><desc id="desc">First-signal target weights for three implemented strategies alongside the corresponding training-return correlation matrix. The optimiser uses ten per cent diagonal covariance shrinkage and a fifty per cent weight cap.</desc>
+<style>text{font-family:Arial,Helvetica,sans-serif} .muted{fill:#52677a}</style>
+<rect width="1040" height="680" rx="18" fill="#f7f9fb"/>
+<rect x="0" y="0" width="1040" height="8" fill="#007f80"/>
+<text x="36.00" y="39.00" font-size="12" fill="#007f80" text-anchor="start" font-weight="700">ATLAS QUANT  /  FINANCIAL VISUAL ATLAS</text>
+<text x="36.00" y="76.00" font-size="27" fill="#162c42" text-anchor="start" font-weight="700">From observed variation to weights</text>
+<text x="36.00" y="103.00" font-size="13" fill="#52677a" text-anchor="start" font-weight="400">SYNTHETIC DATA  ·  First signal: 2020-03-26  ·  Execution: 2020-03-27  ·  60 training returns</text>
+<line x1="100.000" y1="141.000" x2="125.000" y2="141.000" stroke="#007f80" stroke-width="3"/>
+<text x="134.00" y="145.00" font-size="12" fill="#162c42" text-anchor="start" font-weight="400">SYNTH_1</text>
+<line x1="320.000" y1="141.000" x2="345.000" y2="141.000" stroke="#4674bd" stroke-width="3"/>
+<text x="354.00" y="145.00" font-size="12" fill="#162c42" text-anchor="start" font-weight="400">SYNTH_2</text>
+<line x1="540.000" y1="141.000" x2="565.000" y2="141.000" stroke="#be581d" stroke-width="3"/>
+<text x="574.00" y="145.00" font-size="12" fill="#162c42" text-anchor="start" font-weight="400">SYNTH_3</text>
+<line x1="760.000" y1="141.000" x2="785.000" y2="141.000" stroke="#8153a2" stroke-width="3"/>
+<text x="794.00" y="145.00" font-size="12" fill="#162c42" text-anchor="start" font-weight="400">SYNTH_4</text>
+<text x="100.00" y="197.00" font-size="16" fill="#162c42" text-anchor="start" font-weight="700">Target allocation at the first signal</text>
+<rect x="100.000" y="215.000" width="390.000" height="270.000" fill="#ffffff" rx="5"/>
+<line x1="100.000" y1="485.000" x2="490.000" y2="485.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="489.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">0%</text>
+<line x1="100.000" y1="417.500" x2="490.000" y2="417.500" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="421.50" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">25%</text>
+<line x1="100.000" y1="350.000" x2="490.000" y2="350.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="354.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">50%</text>
+<line x1="100.000" y1="282.500" x2="490.000" y2="282.500" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="286.50" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">75%</text>
+<line x1="100.000" y1="215.000" x2="490.000" y2="215.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="219.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">100%</text>
+<line x1="173.125" y1="485.000" x2="173.125" y2="490.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="173.12" y="508.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">Equal weight</text>
+<line x1="295.000" y1="485.000" x2="295.000" y2="490.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="295.00" y="508.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">Inverse volatility</text>
+<line x1="416.875" y1="485.000" x2="416.875" y2="490.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="416.88" y="508.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">Minimum variance</text>
+<text x="295.00" y="533.00" font-size="12" fill="#162c42" text-anchor="middle" font-weight="400">Allocation method</text>
+<text x="45.00" y="350.00" font-size="12" fill="#162c42" text-anchor="middle" font-weight="400" transform="rotate(-90 45 350.0)">Portfolio weight</text>
+<rect x="144.125" y="417.500" width="58.000" height="67.500" fill="#007f80" rx="0"/>
+<text x="173.12" y="455.25" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">25%</text>
+<rect x="144.125" y="350.000" width="58.000" height="67.500" fill="#4674bd" rx="0"/>
+<text x="173.12" y="387.75" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">25%</text>
+<rect x="144.125" y="282.500" width="58.000" height="67.500" fill="#be581d" rx="0"/>
+<text x="173.12" y="320.25" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">25%</text>
+<rect x="144.125" y="215.000" width="58.000" height="67.500" fill="#8153a2" rx="0"/>
+<text x="173.12" y="252.75" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">25%</text>
+<rect x="266.000" y="361.349" width="58.000" height="123.651" fill="#007f80" rx="0"/>
+<text x="295.00" y="427.17" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">46%</text>
+<rect x="266.000" y="300.480" width="58.000" height="60.869" fill="#4674bd" rx="0"/>
+<text x="295.00" y="334.91" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">23%</text>
+<rect x="266.000" y="253.317" width="58.000" height="47.163" fill="#be581d" rx="0"/>
+<text x="295.00" y="280.90" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">17%</text>
+<rect x="266.000" y="215.000" width="58.000" height="38.317" fill="#8153a2" rx="0"/>
+<text x="295.00" y="238.16" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">14%</text>
+<rect x="387.875" y="350.000" width="58.000" height="135.000" fill="#007f80" rx="0"/>
+<text x="416.88" y="421.50" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">50%</text>
+<rect x="387.875" y="288.974" width="58.000" height="61.026" fill="#4674bd" rx="0"/>
+<text x="416.88" y="323.49" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">23%</text>
+<rect x="387.875" y="242.250" width="58.000" height="46.725" fill="#be581d" rx="0"/>
+<text x="416.88" y="269.61" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">17%</text>
+<rect x="387.875" y="215.000" width="58.000" height="27.250" fill="#8153a2" rx="0"/>
+<text x="416.88" y="232.62" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">10%</text>
+<text x="610.00" y="197.00" font-size="16" fill="#162c42" text-anchor="start" font-weight="700">Training-return correlation</text>
+<text x="604.00" y="252.00" font-size="12" fill="#162c42" text-anchor="end" font-weight="400">1</text>
+<text x="646.00" y="502.00" font-size="12" fill="#162c42" text-anchor="middle" font-weight="400">1</text>
+<rect x="614.000" y="215.000" width="62.000" height="62.000" fill="#007f80" rx="4"/>
+<text x="645.00" y="252.00" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">1.00</text>
+<rect x="678.000" y="215.000" width="62.000" height="62.000" fill="#dbe8e8" rx="4"/>
+<text x="709.00" y="252.00" font-size="13" fill="#162c42" text-anchor="middle" font-weight="700">0.10</text>
+<rect x="742.000" y="215.000" width="62.000" height="62.000" fill="#ede1d9" rx="4"/>
+<text x="773.00" y="252.00" font-size="13" fill="#162c42" text-anchor="middle" font-weight="700">-0.12</text>
+<rect x="806.000" y="215.000" width="62.000" height="62.000" fill="#c5ddde" rx="4"/>
+<text x="837.00" y="252.00" font-size="13" fill="#162c42" text-anchor="middle" font-weight="700">0.19</text>
+<text x="604.00" y="316.00" font-size="12" fill="#162c42" text-anchor="end" font-weight="400">2</text>
+<text x="710.00" y="502.00" font-size="12" fill="#162c42" text-anchor="middle" font-weight="400">2</text>
+<rect x="614.000" y="279.000" width="62.000" height="62.000" fill="#dbe8e8" rx="4"/>
+<text x="645.00" y="316.00" font-size="13" fill="#162c42" text-anchor="middle" font-weight="700">0.10</text>
+<rect x="678.000" y="279.000" width="62.000" height="62.000" fill="#007f80" rx="4"/>
+<text x="709.00" y="316.00" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">1.00</text>
+<rect x="742.000" y="279.000" width="62.000" height="62.000" fill="#a9d0d1" rx="4"/>
+<text x="773.00" y="316.00" font-size="13" fill="#162c42" text-anchor="middle" font-weight="700">0.31</text>
+<rect x="806.000" y="279.000" width="62.000" height="62.000" fill="#e5eded" rx="4"/>
+<text x="837.00" y="316.00" font-size="13" fill="#162c42" text-anchor="middle" font-weight="700">0.06</text>
+<text x="604.00" y="380.00" font-size="12" fill="#162c42" text-anchor="end" font-weight="400">3</text>
+<text x="774.00" y="502.00" font-size="12" fill="#162c42" text-anchor="middle" font-weight="400">3</text>
+<rect x="614.000" y="343.000" width="62.000" height="62.000" fill="#ede1d9" rx="4"/>
+<text x="645.00" y="380.00" font-size="13" fill="#162c42" text-anchor="middle" font-weight="700">-0.12</text>
+<rect x="678.000" y="343.000" width="62.000" height="62.000" fill="#a9d0d1" rx="4"/>
+<text x="709.00" y="380.00" font-size="13" fill="#162c42" text-anchor="middle" font-weight="700">0.31</text>
+<rect x="742.000" y="343.000" width="62.000" height="62.000" fill="#007f80" rx="4"/>
+<text x="773.00" y="380.00" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">1.00</text>
+<rect x="806.000" y="343.000" width="62.000" height="62.000" fill="#f0e8e4" rx="4"/>
+<text x="837.00" y="380.00" font-size="13" fill="#162c42" text-anchor="middle" font-weight="700">-0.07</text>
+<text x="604.00" y="444.00" font-size="12" fill="#162c42" text-anchor="end" font-weight="400">4</text>
+<text x="838.00" y="502.00" font-size="12" fill="#162c42" text-anchor="middle" font-weight="400">4</text>
+<rect x="614.000" y="407.000" width="62.000" height="62.000" fill="#c5ddde" rx="4"/>
+<text x="645.00" y="444.00" font-size="13" fill="#162c42" text-anchor="middle" font-weight="700">0.19</text>
+<rect x="678.000" y="407.000" width="62.000" height="62.000" fill="#e5eded" rx="4"/>
+<text x="709.00" y="444.00" font-size="13" fill="#162c42" text-anchor="middle" font-weight="700">0.06</text>
+<rect x="742.000" y="407.000" width="62.000" height="62.000" fill="#f0e8e4" rx="4"/>
+<text x="773.00" y="444.00" font-size="13" fill="#162c42" text-anchor="middle" font-weight="700">-0.07</text>
+<rect x="806.000" y="407.000" width="62.000" height="62.000" fill="#007f80" rx="4"/>
+<text x="837.00" y="444.00" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">1.00</text>
+<text x="740.00" y="532.00" font-size="12" fill="#162c42" text-anchor="middle" font-weight="400">Rows and columns: SYNTH_1 to SYNTH_4</text>
+<text x="740.00" y="555.00" font-size="11" fill="#162c42" text-anchor="middle" font-weight="400">Scale: −1 (orange), 0 (pale), +1 (teal)</text>
+<line x1="36.000" y1="605.000" x2="1004.000" y2="605.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="36.00" y="629.00" font-size="11" fill="#52677a" text-anchor="start" font-weight="400">Minimum variance minimises estimated wᵀΣw with weights summing to one, no shorts and a 50% target cap.</text>
+<text x="36.00" y="648.00" font-size="11" fill="#52677a" text-anchor="start" font-weight="400">Correlation uses the raw training returns. The optimiser uses covariance with 10% diagonal shrinkage; realised weights can drift.</text>
+</svg>

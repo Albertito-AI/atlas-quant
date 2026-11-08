@@ -7,3 +7,4 @@ recursive-include tests *.py
 recursive-include .github *.yml
 global-exclude __pycache__ *.py[cod]
 
+recursive-include docs/assets *.svg *.csv *.json

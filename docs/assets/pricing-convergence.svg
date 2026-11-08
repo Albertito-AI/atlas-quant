@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="720" viewBox="0 0 1040 720" role="img" aria-labelledby="title desc">
+<title id="title">Different methods, one pricing model</title><desc id="desc">Even-step Cox-Ross-Rubinstein tree errors approach the Black-Scholes reference. Monte Carlo estimates show approximate ninety-five per cent intervals based on independent antithetic pair averages.</desc>
+<style>text{font-family:Arial,Helvetica,sans-serif} .muted{fill:#52677a}</style>
+<rect width="1040" height="720" rx="18" fill="#f7f9fb"/>
+<rect x="0" y="0" width="1040" height="8" fill="#007f80"/>
+<text x="36.00" y="39.00" font-size="12" fill="#007f80" text-anchor="start" font-weight="700">ATLAS QUANT  /  FINANCIAL VISUAL ATLAS</text>
+<text x="36.00" y="76.00" font-size="27" fill="#162c42" text-anchor="start" font-weight="700">Different methods, one pricing model</text>
+<text x="36.00" y="103.00" font-size="13" fill="#52677a" text-anchor="start" font-weight="400">MODEL OUTPUT  ·  European call  ·  Spot = strike = 100  ·  T = 1 year  ·  r = 5%  ·  σ = 20%  ·  q = 0%</text>
+<text x="100.00" y="145.00" font-size="15" fill="#007f80" text-anchor="start" font-weight="700">Black–Scholes reference: 10.45058357 currency units</text>
+<text x="100.00" y="192.00" font-size="16" fill="#162c42" text-anchor="start" font-weight="700">Binomial discretisation error</text>
+<rect x="100.000" y="210.000" width="350.000" height="280.000" fill="#ffffff" rx="5"/>
+<line x1="100.000" y1="490.000" x2="450.000" y2="490.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="494.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">-0.20</text>
+<line x1="100.000" y1="423.333" x2="450.000" y2="423.333" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="427.33" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">-0.15</text>
+<line x1="100.000" y1="356.667" x2="450.000" y2="356.667" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="360.67" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">-0.10</text>
+<line x1="100.000" y1="290.000" x2="450.000" y2="290.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="294.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">-0.05</text>
+<line x1="100.000" y1="223.333" x2="450.000" y2="223.333" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="227.33" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">0.00</text>
+<line x1="115.909" y1="490.000" x2="115.909" y2="495.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="115.91" y="513.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">10</text>
+<line x1="168.939" y1="490.000" x2="168.939" y2="495.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="168.94" y="513.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">20</text>
+<line x1="221.970" y1="490.000" x2="221.970" y2="495.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="221.97" y="513.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">40</text>
+<line x1="275.000" y1="490.000" x2="275.000" y2="495.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="275.00" y="513.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">80</text>
+<line x1="328.030" y1="490.000" x2="328.030" y2="495.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="328.03" y="513.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">160</text>
+<line x1="381.061" y1="490.000" x2="381.061" y2="495.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="381.06" y="513.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">320</text>
+<line x1="434.091" y1="490.000" x2="434.091" y2="495.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="434.09" y="513.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">640</text>
+<text x="275.00" y="538.00" font-size="12" fill="#162c42" text-anchor="middle" font-weight="400">Tree steps (categorical, all even)</text>
+<text x="45.00" y="350.00" font-size="12" fill="#162c42" text-anchor="middle" font-weight="400" transform="rotate(-90 45 350.0)">Tree price minus reference</text>
+<line x1="100.000" y1="223.333" x2="450.000" y2="223.333" stroke="#52677a" stroke-width="1" stroke-dasharray="5 4"/>
+<path d="M115.909,486.233 L168.939,355.765 L221.970,289.776 L275.000,256.609 L328.030,239.985 L381.061,231.662 L434.091,227.499" fill="none" stroke="#007f80" stroke-width="2.5" stroke-linejoin="round"/>
+<circle cx="115.909" cy="486.233" r="4" fill="#007f80"/>
+<circle cx="168.939" cy="355.765" r="4" fill="#007f80"/>
+<circle cx="221.970" cy="289.776" r="4" fill="#007f80"/>
+<circle cx="275.000" cy="256.609" r="4" fill="#007f80"/>
+<circle cx="328.030" cy="239.985" r="4" fill="#007f80"/>
+<circle cx="381.061" cy="231.662" r="4" fill="#007f80"/>
+<circle cx="434.091" cy="227.499" r="4" fill="#007f80"/>
+<text x="595.00" y="192.00" font-size="16" fill="#162c42" text-anchor="start" font-weight="700">Monte Carlo sampling uncertainty</text>
+<rect x="595.000" y="210.000" width="350.000" height="280.000" fill="#ffffff" rx="5"/>
+<line x1="595.000" y1="490.000" x2="945.000" y2="490.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="583.00" y="494.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">7.0</text>
+<line x1="595.000" y1="420.000" x2="945.000" y2="420.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="583.00" y="424.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">8.0</text>
+<line x1="595.000" y1="350.000" x2="945.000" y2="350.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="583.00" y="354.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">9.0</text>
+<line x1="595.000" y1="280.000" x2="945.000" y2="280.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="583.00" y="284.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">10.0</text>
+<line x1="595.000" y1="210.000" x2="945.000" y2="210.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="583.00" y="214.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">11.0</text>
+<line x1="624.167" y1="490.000" x2="624.167" y2="495.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="624.17" y="513.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">200</text>
+<line x1="697.083" y1="490.000" x2="697.083" y2="495.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="697.08" y="513.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">1k</text>
+<line x1="770.000" y1="490.000" x2="770.000" y2="495.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="770.00" y="513.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">5k</text>
+<line x1="842.917" y1="490.000" x2="842.917" y2="495.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="842.92" y="513.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">20k</text>
+<line x1="915.833" y1="490.000" x2="915.833" y2="495.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="915.83" y="513.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">100k</text>
+<text x="770.00" y="538.00" font-size="12" fill="#162c42" text-anchor="middle" font-weight="400">Terminal paths (categorical)</text>
+<text x="540.00" y="350.00" font-size="12" fill="#162c42" text-anchor="middle" font-weight="400" transform="rotate(-90 540 350.0)">Option price (currency units)</text>
+<line x1="595.000" y1="248.459" x2="945.000" y2="248.459" stroke="#007f80" stroke-width="2" stroke-dasharray="5 4"/>
+<line x1="624.167" y1="459.769" x2="624.167" y2="320.887" stroke="#4674bd" stroke-width="2"/>
+<line x1="617.167" y1="459.769" x2="631.167" y2="459.769" stroke="#4674bd" stroke-width="2"/>
+<line x1="617.167" y1="320.887" x2="631.167" y2="320.887" stroke="#4674bd" stroke-width="2"/>
+<circle cx="624.167" cy="390.328" r="5" fill="#4674bd"/>
+<line x1="697.083" y1="322.997" x2="697.083" y2="236.947" stroke="#4674bd" stroke-width="2"/>
+<line x1="690.083" y1="322.997" x2="704.083" y2="322.997" stroke="#4674bd" stroke-width="2"/>
+<line x1="690.083" y1="236.947" x2="704.083" y2="236.947" stroke="#4674bd" stroke-width="2"/>
+<circle cx="697.083" cy="279.972" r="5" fill="#4674bd"/>
+<line x1="770.000" y1="269.077" x2="770.000" y2="227.790" stroke="#4674bd" stroke-width="2"/>
+<line x1="763.000" y1="269.077" x2="777.000" y2="269.077" stroke="#4674bd" stroke-width="2"/>
+<line x1="763.000" y1="227.790" x2="777.000" y2="227.790" stroke="#4674bd" stroke-width="2"/>
+<circle cx="770.000" cy="248.434" r="5" fill="#4674bd"/>
+<line x1="842.917" y1="256.624" x2="842.917" y2="236.094" stroke="#4674bd" stroke-width="2"/>
+<line x1="835.917" y1="256.624" x2="849.917" y2="256.624" stroke="#4674bd" stroke-width="2"/>
+<line x1="835.917" y1="236.094" x2="849.917" y2="236.094" stroke="#4674bd" stroke-width="2"/>
+<circle cx="842.917" cy="246.359" r="5" fill="#4674bd"/>
+<line x1="915.833" y1="251.826" x2="915.833" y2="242.750" stroke="#4674bd" stroke-width="2"/>
+<line x1="908.833" y1="251.826" x2="922.833" y2="251.826" stroke="#4674bd" stroke-width="2"/>
+<line x1="908.833" y1="242.750" x2="922.833" y2="242.750" stroke="#4674bd" stroke-width="2"/>
+<circle cx="915.833" cy="247.288" r="5" fill="#4674bd"/>
+<line x1="100.000" y1="579.000" x2="125.000" y2="579.000" stroke="#007f80" stroke-width="3" stroke-dasharray="5 4"/>
+<text x="134.00" y="583.00" font-size="12" fill="#162c42" text-anchor="start" font-weight="400">Model reference</text>
+<line x1="540.000" y1="579.000" x2="565.000" y2="579.000" stroke="#4674bd" stroke-width="3"/>
+<text x="574.00" y="583.00" font-size="12" fill="#162c42" text-anchor="start" font-weight="400">Estimate and 95% interval</text>
+<line x1="36.000" y1="645.000" x2="1004.000" y2="645.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="36.00" y="669.00" font-size="11" fill="#52677a" text-anchor="start" font-weight="400">Monte Carlo uses antithetic pairs; independent observations = terminal paths / 2. Seed 42 is reused, so estimates are correlated.</text>
+<text x="36.00" y="688.00" font-size="11" fill="#52677a" text-anchor="start" font-weight="400">Intervals describe sampling uncertainty under the chosen model. They exclude parameter uncertainty and model misspecification.</text>
+</svg>

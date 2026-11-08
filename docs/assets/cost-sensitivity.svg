@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="680" viewBox="0 0 1040 680" role="img" aria-labelledby="title desc">
+<title id="title">Costs change the result</title><desc id="desc">Two bar charts show final wealth and total fees for zero, ten, twenty-five and fifty basis points per side. Fee sums differ from the final-wealth difference because cash flows compound differently.</desc>
+<style>text{font-family:Arial,Helvetica,sans-serif} .muted{fill:#52677a}</style>
+<rect width="1040" height="680" rx="18" fill="#f7f9fb"/>
+<rect x="0" y="0" width="1040" height="8" fill="#007f80"/>
+<text x="36.00" y="39.00" font-size="12" fill="#007f80" text-anchor="start" font-weight="700">ATLAS QUANT  /  FINANCIAL VISUAL ATLAS</text>
+<text x="36.00" y="76.00" font-size="27" fill="#162c42" text-anchor="start" font-weight="700">Costs change the result</text>
+<text x="36.00" y="103.00" font-size="13" fill="#52677a" text-anchor="start" font-weight="400">SYNTHETIC DATA  ·  One fixed path and strategy  ·  Only the per-side fee changes</text>
+<text x="100.00" y="172.00" font-size="16" fill="#162c42" text-anchor="start" font-weight="700">Final portfolio wealth</text>
+<rect x="100.000" y="190.000" width="345.000" height="310.000" fill="#ffffff" rx="5"/>
+<line x1="100.000" y1="500.000" x2="445.000" y2="500.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="504.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">0.0k</text>
+<line x1="100.000" y1="422.500" x2="445.000" y2="422.500" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="426.50" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">25.0k</text>
+<line x1="100.000" y1="345.000" x2="445.000" y2="345.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="349.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">50.0k</text>
+<line x1="100.000" y1="267.500" x2="445.000" y2="267.500" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="271.50" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">75.0k</text>
+<line x1="100.000" y1="190.000" x2="445.000" y2="190.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="88.00" y="194.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">100.0k</text>
+<line x1="149.286" y1="500.000" x2="149.286" y2="505.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="149.29" y="523.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">0</text>
+<line x1="231.429" y1="500.000" x2="231.429" y2="505.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="231.43" y="523.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">10</text>
+<line x1="313.571" y1="500.000" x2="313.571" y2="505.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="313.57" y="523.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">25</text>
+<line x1="395.714" y1="500.000" x2="395.714" y2="505.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="395.71" y="523.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">50</text>
+<text x="272.50" y="548.00" font-size="12" fill="#162c42" text-anchor="middle" font-weight="400">Per-side cost (basis points)</text>
+<text x="45.00" y="345.00" font-size="12" fill="#162c42" text-anchor="middle" font-weight="400" transform="rotate(-90 45 345.0)">Currency units</text>
+<rect x="125.286" y="201.225" width="48.000" height="298.775" fill="#007f80" rx="3"/>
+<text x="149.29" y="189.23" font-size="12" fill="#162c42" text-anchor="middle" font-weight="700">96,379</text>
+<rect x="207.429" y="202.243" width="48.000" height="297.757" fill="#007f80" rx="3"/>
+<text x="231.43" y="190.24" font-size="12" fill="#162c42" text-anchor="middle" font-weight="700">96,051</text>
+<rect x="289.571" y="203.761" width="48.000" height="296.239" fill="#007f80" rx="3"/>
+<text x="313.57" y="191.76" font-size="12" fill="#162c42" text-anchor="middle" font-weight="700">95,561</text>
+<rect x="371.714" y="206.272" width="48.000" height="293.728" fill="#007f80" rx="3"/>
+<text x="395.71" y="194.27" font-size="12" fill="#162c42" text-anchor="middle" font-weight="700">94,751</text>
+<text x="595.00" y="172.00" font-size="16" fill="#162c42" text-anchor="start" font-weight="700">Sum of transaction fees</text>
+<rect x="595.000" y="190.000" width="345.000" height="310.000" fill="#ffffff" rx="5"/>
+<line x1="595.000" y1="500.000" x2="940.000" y2="500.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="583.00" y="504.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">0.0k</text>
+<line x1="595.000" y1="422.500" x2="940.000" y2="422.500" stroke="#dce4e9" stroke-width="1"/>
+<text x="583.00" y="426.50" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">0.5k</text>
+<line x1="595.000" y1="345.000" x2="940.000" y2="345.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="583.00" y="349.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">1.0k</text>
+<line x1="595.000" y1="267.500" x2="940.000" y2="267.500" stroke="#dce4e9" stroke-width="1"/>
+<text x="583.00" y="271.50" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">1.5k</text>
+<line x1="595.000" y1="190.000" x2="940.000" y2="190.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="583.00" y="194.00" font-size="11" fill="#52677a" text-anchor="end" font-weight="400">2.0k</text>
+<line x1="644.286" y1="500.000" x2="644.286" y2="505.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="644.29" y="523.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">0</text>
+<line x1="726.429" y1="500.000" x2="726.429" y2="505.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="726.43" y="523.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">10</text>
+<line x1="808.571" y1="500.000" x2="808.571" y2="505.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="808.57" y="523.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">25</text>
+<line x1="890.714" y1="500.000" x2="890.714" y2="505.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="890.71" y="523.00" font-size="11" fill="#52677a" text-anchor="middle" font-weight="400">50</text>
+<text x="767.50" y="548.00" font-size="12" fill="#162c42" text-anchor="middle" font-weight="400">Per-side cost (basis points)</text>
+<text x="540.00" y="345.00" font-size="12" fill="#162c42" text-anchor="middle" font-weight="400" transform="rotate(-90 540 345.0)">Currency units</text>
+<rect x="620.286" y="500.000" width="48.000" height="0.000" fill="#be581d" rx="3"/>
+<text x="644.29" y="488.00" font-size="12" fill="#162c42" text-anchor="middle" font-weight="700">0</text>
+<rect x="702.429" y="448.252" width="48.000" height="51.748" fill="#be581d" rx="3"/>
+<text x="726.43" y="436.25" font-size="12" fill="#162c42" text-anchor="middle" font-weight="700">334</text>
+<rect x="784.571" y="371.009" width="48.000" height="128.991" fill="#be581d" rx="3"/>
+<text x="808.57" y="359.01" font-size="12" fill="#162c42" text-anchor="middle" font-weight="700">832</text>
+<rect x="866.714" y="243.261" width="48.000" height="256.739" fill="#be581d" rx="3"/>
+<text x="890.71" y="231.26" font-size="12" fill="#162c42" text-anchor="middle" font-weight="700">1,656</text>
+<line x1="36.000" y1="605.000" x2="1004.000" y2="605.000" stroke="#dce4e9" stroke-width="1"/>
+<text x="36.00" y="629.00" font-size="11" fill="#52677a" text-anchor="start" font-weight="400">Both purchases and sales incur fees on gross traded notional. Each scenario reruns the self-financing ledger.</text>
+<text x="36.00" y="648.00" font-size="11" fill="#52677a" text-anchor="start" font-weight="400">The wealth difference includes compounding effects; it is not identical to the sum of fees. No liquidity or market-impact model.</text>
+</svg>
