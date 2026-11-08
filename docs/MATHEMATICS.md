@@ -19,6 +19,15 @@ D_t=W_t/\max_{0\le j\le t}W_j-1.
 
 `drawdown` returns signed values at or below zero, including the initial zero. `performance_metrics["max_drawdown"]` returns the nonnegative magnitude of the worst drawdown. Including initial wealth makes an immediate loss visible. A return of exactly minus one represents complete loss; values below minus one are rejected.
 
+Drawdown is evaluated using compensated cumulative `log1p` returns and `expm1`
+of the distance from the running log-wealth peak. This preserves recovery after
+absolute wealth would underflow and permits finite relative drawdowns when the
+absolute wealth scale would overflow. A return of exactly minus one remains an
+absorbing complete loss. For example, 1,100 halvings followed by 1,100 doublings
+restore wealth to one and drawdown to zero; floating-point underflow must not
+turn that path into permanent bankruptcy. Absolute growth statistics still
+reject results outside their representable range.
+
 For `n` observations and `m` observations per year, geometric annualised return is
 
 \[

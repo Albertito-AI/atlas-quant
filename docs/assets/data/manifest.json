@@ -7,7 +7,7 @@
     "scripts/build_visuals.py": "9a363874e3da00bd58bd8584c2ab1986f987e0161ca2afa56126630a19b3d817",
     "src/atlas_quant/data.py": "6f78c8d26c2d1aabfd748922b1fc020a216e8552d2a84d510510acc114b6b23b",
     "src/atlas_quant/backtest.py": "d96c322bc13f29a5cb74d646780f069c8cb875c12f31683b4b5960a55b168c4c",
-    "src/atlas_quant/quant.py": "040331c3728bfc74b4b6fadcf870dfe1ec6dd3a16a9b6dbc1fa510f0db18528e"
+    "src/atlas_quant/quant.py": "a72bbeae306d662d978b2fcdbe3c72d94b8ce7543a1c377f61e97ce46cff9408"
   },
   "meaning": "Environment and source hashes for this generated bundle, not an audit or a signature.",
   "files": {
@@ -18,13 +18,13 @@
     "pricing-convergence.svg": "a1f761cb41801ec0bdb8b52c0c6e57ab7fbdfad1bedb200e364c814b400a55c6",
     "tail-risk.svg": "74a51548164312e517eba12ecff9b1fbc3d520d9a1abf87d1c0a2243a9fd576c",
     "data/synthetic-prices.csv": "d8dd0ff0cbd2b8266e5732f092b4571d538c34b7958cd05cdd1595bb0af2aa4e",
-    "data/performance.csv": "0fc44483e6ded198f2742b05452d57983a0df56e13db78f111856478b37751e6",
+    "data/performance.csv": "3bba8fcb1cfa283f2e2cee865f6e3f2bca4c5f8f61d1a276802f13922846cb73",
     "data/cost-scenarios.csv": "bdbc1374bff85cdcfb24655b933e77a6a1645aa245d7fa546fa103095df18829",
     "data/option-sensitivities.csv": "baf755008ab55d5812cec81c02751874dc7985a7081930e9ccc6829a354053fb",
     "data/pricing-convergence.csv": "c4ac4b52fa6a177728f482e2b4b8391afb3ad0bf06b51c33c58d6583d0ea9e9f",
     "data/allocation.csv": "8ca3daecdfef75cd7e716efec2289cec717e138402cdceacf35b7a84df9f6f42",
     "data/correlation.csv": "79e90ebd2e888aa6a202296c461bc1794d02f641bab6c8c773639b1a31d01ae3",
     "data/tail-risk.csv": "7f93ca798fbea21229c1d1369dc41a70d7e8e9c83c5a6494c4b260b1e9e8f6d2",
-    "data/visual-evidence.json": "b05d089d9e66883d5c5d57845a4c9271760d590f032678f6dbcf8d62894d8db5"
+    "data/visual-evidence.json": "4f8ce1680441c640b473a02f938f53d990a140f2b91813edd1fc9b7170b63eea"
   }
 }
