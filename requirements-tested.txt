@@ -1,4 +1,4 @@
 # Runtime versions used for the local 0.1.0 release checks on Python 3.12.
 # This is a version constraint file, not a hash-locked supply-chain guarantee.
-numpy==2.3.5
+numpy==2.4.6
 scipy==1.17.0
