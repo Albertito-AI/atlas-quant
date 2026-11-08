@@ -14,6 +14,11 @@ from pathlib import Path
 MAX_FILE_BYTES = 2_000_000
 IGNORE_DIRS = {'.git', '.venv', 'venv', '__pycache__', 'build', 'dist', '.ruff_cache', '.pytest_cache', '.mypy_cache', 'node_modules'}
 TEXT_SUFFIXES = {'.py', '.md', '.toml', '.yml', '.yaml', '.json', '.txt', '.html', '.css', '.csv'}
+# This one exact, pinned reusable monitor needs scoped Actions write access to
+# retry failures. All other workflows and mutations continue to be rejected.
+APPROVED_ATLAS_PATH = Path('.github/workflows/atlas-flexible-zero-fail.yml')
+APPROVED_ATLAS_CALLER = "name: Atlas Flexible Zero Fail\n\non:\n  push:\n    branches: [main]\n  schedule:\n    - cron: '41 2 * * *'\n  workflow_dispatch:\n\npermissions:\n  contents: read\n\njobs:\n  atlas-zero-fail:\n    permissions:\n      contents: read\n      actions: write\n      issues: write\n    uses: Albertito-AI/Albertito-AI/.github/workflows/atlas-flexible-zero-fail.yml@2e849a36fd6a2b93d1a968efd4fcccdb7523132b\n"
+
 SECRET_PATTERNS = (
     ('private-key', re.compile(r'-----BEGIN (?:RSA |EC |OPENSSH |DSA )?PRIVATE KEY-----')),
     ('github-token', re.compile(r'\b(?:gh[pousr]_[A-Za-z0-9]{36,255}|github_pat_[A-Za-z0-9_]{60,255})\b')),
@@ -64,9 +69,10 @@ def inspect_python(text: str) -> list[tuple[int, str]]:
     return sorted(set(findings))
 
 
-def inspect_workflow(text: str) -> list[tuple[int, str]]:
+def inspect_workflow(text: str, path: Path | None = None) -> list[tuple[int, str]]:
     """Validate narrow workflow conventions without evaluating YAML tags."""
     findings = []
+    approved_atlas_caller = path == APPROVED_ATLAS_PATH and text == APPROVED_ATLAS_CALLER
     for number, line in enumerate(text.splitlines(), 1):
         code = line.split('#', 1)[0]
         if re.search(r'\b(?:pull_request_target|workflow_run)\b', code):
@@ -77,7 +83,8 @@ def inspect_workflow(text: str) -> list[tuple[int, str]]:
         if re.search(r'\b(?:write-all|self-hosted)\b', code):
             findings.append((number, 'privileged-workflow-setting'))
         if re.search(r'^\s*(?:contents|actions|id-token|packages|pull-requests|security-events):\s*write\b', code):
-            findings.append((number, 'write-token-permission'))
+            if not (approved_atlas_caller and code.strip() == 'actions: write'):
+                findings.append((number, 'write-token-permission'))
         if re.search(r'persist-credentials:\s*true\b', code):
             findings.append((number, 'persisted-checkout-credential'))
     if not re.search(r'(?m)^permissions:\s*\n\s+contents:\s*read\s*$', text):
@@ -124,7 +131,7 @@ def scan(root: Path) -> list[str]:
         if relative.parts[0] == 'src' and path.suffix == '.py':
             found += inspect_python(content)
         if relative.parts[:2] == ('.github', 'workflows') and path.suffix in {'.yml', '.yaml'}:
-            found += inspect_workflow(content)
+            found += inspect_workflow(content, relative)
         findings.extend(f'{relative}:{line}: {rule}' for line, rule in sorted(set(found)))
     return findings
 
