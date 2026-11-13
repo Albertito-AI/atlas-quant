@@ -1,0 +1,94 @@
+{
+  "schema": "atlas-observatory-retained-evidence-v1",
+  "work_id": "ATLAS-OBS-20261114-0034SGT-NEA",
+  "deduplication_key": "ATLAS-OBS-20261114-0034SGT-NEA|56244717b76e818416889ea67e10a70ddeb38b60|OBSERVED_AND_RETAINED",
+  "outcome": "OBSERVED_AND_RETAINED",
+  "research_claim_boundary": "Routine monitored environmental observation only; not a prediction, causal finding, algorithmic innovation, independent learner improvement or financial outcome.",
+  "repository": "Albertito-AI/atlas-quant",
+  "source_revision": "56244717b76e818416889ea67e10a70ddeb38b60",
+  "workflow": ".github/workflows/observatory.yml",
+  "run_id": 43463723460,
+  "run_url": "https://github.com/Albertito-AI/atlas-quant/actions/runs/43463723460",
+  "run_event": "schedule",
+  "run_conclusion": "success",
+  "run_attempt": 1,
+  "environment_job": {
+    "id": 132017144015,
+    "conclusion": "success",
+    "opsbook_source_gate": "successful; includes separately labelled practice and exam cases",
+    "native_verification": "success"
+  },
+  "historical_job": {
+    "conclusion": "skipped",
+    "reason": "Hourly schedule runs environment only; daily backtest separately scheduled."
+  },
+  "artifact": {
+    "id": 14055929959,
+    "name": "environment-43463723460-1",
+    "compressed_size_bytes": 2623,
+    "expires_at": "2026-11-27T16:34:05Z",
+    "zip_upload_sha256": "4c20affc703dc8e1feefed05885002278976a99291f675b62724dd630387c71c",
+    "zip_crc_check": "passed",
+    "embedded_files": [
+      {
+        "path": "raw/nea-pm25.json",
+        "bytes": 623,
+        "sha256": "8382ce3116d510d75266fea057ae24a974074b062f9ad35ba2da7be25693b0b3"
+      },
+      {
+        "path": "report.json",
+        "bytes": 1278,
+        "sha256": "cfc8ca9c0cea339f039681758df60590c2639d45410b403384293777f8740024"
+      },
+      {
+        "path": "ATTRIBUTION.md",
+        "bytes": 367,
+        "sha256": "b71da2f356ca248b72ad6cbf9161a47016770227c3e8b58dd2c55e9dac1ae7c4"
+      }
+    ],
+    "independent_byte_readback": "All three embedded file SHA256 hashes matched manifest; artifact ZIP CRC passed."
+  },
+  "source": {
+    "dataset": "NEA PM2.5 via data.gov.sg",
+    "endpoint": "https://api-open.data.gov.sg/v2/real-time/api/pm25",
+    "licence": "Singapore Open Data Licence 1.0",
+    "licence_url": "https://data.gov.sg/open-data-licence",
+    "attribution_required": true,
+    "reviewed_on": "2026-11-13",
+    "scope": "Environmental observation and attributed derived research; no official endorsement.",
+    "next_rights_review_window_starts": "2026-12-06",
+    "rights_review_expires": "2026-12-13"
+  },
+  "evidence": {
+    "source_response_code": 0,
+    "event_time_utc": "2026-11-13T16:00:00Z",
+    "source_published_at_utc": "2026-11-13T16:30:58Z",
+    "received_at_utc": "2026-11-13T16:34:05.296292Z",
+    "latest_age_seconds": 2045.296,
+    "units": "micrograms per cubic metre",
+    "regions": {
+      "north": 27,
+      "south": 12,
+      "west": 41,
+      "east": 17,
+      "central": 21
+    },
+    "reported_status": "ok"
+  },
+  "restrictions": {
+    "binance_live": false,
+    "kraken_live": false,
+    "coinbase_live": false,
+    "live_orders": false,
+    "paid_data": false,
+    "private_hosted_ci": false,
+    "commercial_market_signals": false
+  },
+  "limits": [
+    "Archive file bytes remain in temporary GitHub artifact until expiry; this receipt preserves selected source-attributed material and measured digests, not the complete original archive.",
+    "The declared source timestamp and values were independently read back from the workflow artifact; GitHub job success alone is insufficient.",
+    "Checksum integrity does not establish source authenticity, predictive value or factual completeness."
+  ],
+  "next_owner": "Atlas Quant research curator to decide further scientific/teaching use; Atlas Flexible Zero Fail to monitor future scheduled job failures; Weekly Portfolio Audit alone handles administrative research register ingestion.",
+  "next_trigger": "Next verified observatory execution or 2026-12-06 source rights re-review, whichever warrants substantive action."
+}
