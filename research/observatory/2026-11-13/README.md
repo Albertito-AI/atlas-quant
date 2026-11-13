@@ -31,6 +31,10 @@ The first daily-file collector exhausted its time budget after 606 seconds and f
 
 Independent review also exposed a semantic verifier defect: an empty source set could previously pass after its report hash was changed. Required source and replay checks now reject it. The [actual Opsbook incident](../../../docs/opsbook/observed-verifier-repair.json) retains that repair. Its proposed second instruction remains unpromoted; the accepted source-permission procedure is revision 1. No measured agent learning gain is asserted.
 
+## Post-merge test repair
+
+The original PR checks passed, but the first main-branch test matrix later failed one synthetic archive test. Root-cause reproduction showed that independently regenerating a ZIP and its checksum across a two-second wall-clock boundary changed ZIP metadata. The fixture now uses an explicit fixed timestamp and compression method. A clock-boundary regression checks both daily and monthly fixtures. Production checksum validation, the collector and the successful hosted experiment are unchanged. The initial failed run remains in the record; this is a test-fixture repair, not a reason to weaken source validation.
+
 ## Data rights
 
 The repository's MIT code licence does **not** apply to third-party datasets or override their terms. `compare_reports.py` is original MIT code. The Binance datasets and derived financial reports in this directory are supplied for non-commercial research and education under [Binance Vision Dataset Terms](https://github.com/binance/binance-public-data/blob/master/TERMS_AND_CONDITIONS.md) and [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). Preserve attribution and applicable share-alike conditions. Do not use this evidence in a paid signal product or proprietary live execution system.

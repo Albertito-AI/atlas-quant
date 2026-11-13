@@ -36,7 +36,9 @@
     "dependency_consistency": "passed",
     "hosted_pr_test_run": 43389224789,
     "hosted_pr_dependency_run": 43389224816,
-    "hosted_pr_checks": "success"
+    "hosted_pr_checks": "success",
+    "initial_main_test_run": 43389388982,
+    "initial_main_test_result": "failure in a wall-clock-dependent synthetic ZIP fixture; production source collection and numerical run succeeded"
   },
   "independent_numerical_reproduction": {
     "status": "passed_with_floating_point_tolerance",
@@ -152,5 +154,17 @@
       "bytes": 41291,
       "sha256": "86aa164b0b8769b4f176d8aab41c3223229767fccb3b2627df86b1707555d8c7"
     }
-  ]
+  ],
+  "fixture_repair": {
+    "affected_test": "test_full_monthly_collection_replays_with_bounded_concurrency",
+    "failed_job": 131765404775,
+    "cause": "Fixture regenerated a ZIP and its checksum separately using wall-clock ZIP metadata; a two-second timestamp boundary changed the bytes.",
+    "before_reproduction": "Identical logical monthly data at mocked seconds0 and2 produced distinct bytes/checksums; cross-paired parse raised Archive checksum mismatch.",
+    "change": "Fixed ZIP timestamps and compression in daily/monthly test fixtures; production checksum validation unchanged.",
+    "new_regression": "test_archive_fixtures_are_independent_of_wall_clock",
+    "runtime_pilot_sha256": "798bea93ffa87ecc5d2853d1ca65055e4e9126649a5a7c7fc8ffef78901c5fb8",
+    "repaired_tests_sha256": "c870863f8a5a779dfcee9ed17b3bd8d288ca22131d2393622e57f56ad517ccfc",
+    "validation": "249 local tests passed; independent reviewer forced any wall-clock consultation to fail and verified both builders, full monthly replay and continued rejection of corrupted archives. Hosted results are attached to PR14.",
+    "reviewer": "separate observatory_review agent; code unchanged by reviewer"
+  }
 }
