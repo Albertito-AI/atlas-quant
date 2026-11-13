@@ -1,0 +1,781 @@
+{
+  "schema_version": "1.0",
+  "metadata": {
+    "title": "Atlas Quant Research",
+    "version": "0.1.0",
+    "synthetic": false,
+    "dataset_sha256": "bdb45aa7da6710cec867ce36b6397b5bcdf821a8a9368f667fc8361838ba314f",
+    "seed": 42,
+    "generated_by": "atlas-quant deterministic offline pipeline",
+    "limitations": [
+      "No live data retrieval or broker execution.",
+      "The six-role council uses documented rules, not model inference.",
+      "Historical simulations cannot establish future profitability."
+    ]
+  },
+  "backtest": {
+    "schema_version": "1.0",
+    "dataset": {
+      "source": "CSV:prices.csv",
+      "synthetic": false,
+      "sha256": "bdb45aa7da6710cec867ce36b6397b5bcdf821a8a9368f667fc8361838ba314f",
+      "symbols": [
+        "BTCUSDT",
+        "ETHUSDT"
+      ],
+      "observations": 90,
+      "first_date": "2026-08-15",
+      "last_date": "2026-11-12",
+      "price_convention": "caller-supplied adjusted closes in a common currency"
+    },
+    "config": {
+      "strategy": "minimum_variance",
+      "lookback": 60,
+      "rebalance_every": 7,
+      "transaction_cost_bps": 10.0,
+      "initial_cash": 100000.0,
+      "max_weight": 0.8,
+      "periods_per_year": 365,
+      "execution_lag_bars": 1,
+      "minimum_variance_diagonal_shrinkage": 0.1
+    },
+    "dates": [
+      "2026-10-14",
+      "2026-10-15",
+      "2026-10-16",
+      "2026-10-17",
+      "2026-10-18",
+      "2026-10-19",
+      "2026-10-20",
+      "2026-10-21",
+      "2026-10-22",
+      "2026-10-23",
+      "2026-10-24",
+      "2026-10-25",
+      "2026-10-26",
+      "2026-10-27",
+      "2026-10-28",
+      "2026-10-29",
+      "2026-10-30",
+      "2026-10-31",
+      "2026-11-01",
+      "2026-11-02",
+      "2026-11-03",
+      "2026-11-04",
+      "2026-11-05",
+      "2026-11-06",
+      "2026-11-07",
+      "2026-11-08",
+      "2026-11-09",
+      "2026-11-10",
+      "2026-11-11",
+      "2026-11-12"
+    ],
+    "equity_curve": [
+      100000.0,
+      99900.09990009991,
+      99135.94791300886,
+      98845.34961409577,
+      99513.91610977857,
+      99322.52091363497,
+      100718.45203033989,
+      101954.53610703158,
+      98660.22473897939,
+      98427.77205907657,
+      97898.01257924743,
+      96947.27454783075,
+      96899.91423085972,
+      97849.0905940203,
+      98346.54110401915,
+      94216.87714238127,
+      93551.20019966981,
+      93841.92642661276,
+      94752.32594093704,
+      93081.80290512227,
+      93877.88982757936,
+      98078.78024502262,
+      92249.93037247998,
+      92018.69906178955,
+      92054.52264161009,
+      90139.17976191085,
+      90704.74153443932,
+      88503.42500086705,
+      88741.93383898208,
+      85960.60505298169
+    ],
+    "cash_curve": [
+      100000.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "weights_history": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.8,
+        0.1999999999999999
+      ],
+      [
+        0.7999884572054673,
+        0.20001154279453265
+      ],
+      [
+        0.8011154588807907,
+        0.19888454111920925
+      ],
+      [
+        0.8018358372114895,
+        0.19816416278851043
+      ],
+      [
+        0.801643432865949,
+        0.19835656713405103
+      ],
+      [
+        0.8010466575743966,
+        0.1989533424256033
+      ],
+      [
+        0.8014878737043896,
+        0.19851212629561035
+      ],
+      [
+        0.7999999999999999,
+        0.20000000000000004
+      ],
+      [
+        0.7996568896509307,
+        0.20034311034906926
+      ],
+      [
+        0.8010007577563122,
+        0.19899924224368773
+      ],
+      [
+        0.8015155073541445,
+        0.1984844926458556
+      ],
+      [
+        0.8018719359266968,
+        0.1981280640733033
+      ],
+      [
+        0.8016153387319896,
+        0.1983846612680104
+      ],
+      [
+        0.8018361104394834,
+        0.19816388956051645
+      ],
+      [
+        0.8,
+        0.19999999999999996
+      ],
+      [
+        0.7992553948525759,
+        0.20074460514742398
+      ],
+      [
+        0.7989754149210603,
+        0.20102458507893975
+      ],
+      [
+        0.7991725163276856,
+        0.20082748367231446
+      ],
+      [
+        0.7975467497166334,
+        0.20245325028336658
+      ],
+      [
+        0.7973499926543839,
+        0.20265000734561603
+      ],
+      [
+        0.7932529665620062,
+        0.20674703343799383
+      ],
+      [
+        0.8,
+        0.19999999999999998
+      ],
+      [
+        0.7994382962048663,
+        0.20056170379513377
+      ],
+      [
+        0.799375744974152,
+        0.20062425502584796
+      ],
+      [
+        0.8054273376183507,
+        0.19457266238164925
+      ],
+      [
+        0.805933431614486,
+        0.19406656838551384
+      ],
+      [
+        0.8087474154041482,
+        0.1912525845958519
+      ],
+      [
+        0.8089688109480926,
+        0.19103118905190739
+      ],
+      [
+        0.8000000000000002,
+        0.19999999999999987
+      ]
+    ],
+    "net_returns": [
+      -0.0009990009990008542,
+      -0.007649161390781423,
+      -0.0029313110433774048,
+      0.006763762769750548,
+      -0.0019233008168672017,
+      0.014054527652582749,
+      0.012272667537814641,
+      -0.0323115723325329,
+      -0.002356093152208083,
+      -0.005382215494130871,
+      -0.009711515140790716,
+      -0.0004885162289699485,
+      0.009795430374677228,
+      0.005083854198122406,
+      -0.041990942592175395,
+      -0.007065368359699398,
+      0.003107669664552004,
+      0.009701415443940542,
+      -0.01763041718739522,
+      0.008552551600967018,
+      0.04474845381760084,
+      -0.05943028510326975,
+      -0.0025065743654958395,
+      0.0003893076101466608,
+      -0.020806613567006527,
+      0.0062743168289562945,
+      -0.024269034852345217,
+      0.0026949108253460086,
+      -0.03134176443626957
+    ],
+    "final_weights": {
+      "BTCUSDT": 0.8000000000000002,
+      "ETHUSDT": 0.19999999999999987
+    },
+    "trades": [
+      {
+        "date": "2026-10-15",
+        "decision_date": "2026-10-14",
+        "pretrade_equity": 100000.0,
+        "posttrade_equity": 99900.09990009991,
+        "traded_notional": 99900.09990009991,
+        "transaction_cost": 99.90009990009992,
+        "turnover": 0.9990009990009991,
+        "target_weights": {
+          "BTCUSDT": 0.8,
+          "ETHUSDT": 0.1999999999999999
+        },
+        "pretrade_weights": {
+          "BTCUSDT": 0.0,
+          "ETHUSDT": 0.0
+        }
+      },
+      {
+        "date": "2026-10-22",
+        "decision_date": "2026-10-21",
+        "pretrade_equity": 98660.59542299548,
+        "posttrade_equity": 98660.22473897939,
+        "traded_notional": 370.68401613335664,
+        "transaction_cost": 0.37068401613335666,
+        "turnover": 0.0037571637850358935,
+        "target_weights": {
+          "BTCUSDT": 0.8,
+          "ETHUSDT": 0.2000000000000001
+        },
+        "pretrade_weights": {
+          "BTCUSDT": 0.8018774547433825,
+          "ETHUSDT": 0.19812254525661752
+        }
+      },
+      {
+        "date": "2026-10-29",
+        "decision_date": "2026-10-28",
+        "pretrade_equity": 94217.3469019589,
+        "posttrade_equity": 94216.87714238127,
+        "traded_notional": 469.759577639692,
+        "transaction_cost": 0.469759577639692,
+        "turnover": 0.0049859138798348515,
+        "target_weights": {
+          "BTCUSDT": 0.8,
+          "ETHUSDT": 0.19999999999999996
+        },
+        "pretrade_weights": {
+          "BTCUSDT": 0.8024914611657535,
+          "ETHUSDT": 0.19750853883424643
+        }
+      },
+      {
+        "date": "2026-11-05",
+        "decision_date": "2026-11-04",
+        "pretrade_equity": 92250.46371469635,
+        "posttrade_equity": 92249.93037247998,
+        "traded_notional": 533.3422163665673,
+        "transaction_cost": 0.5333422163665673,
+        "turnover": 0.005781458378529549,
+        "target_weights": {
+          "BTCUSDT": 0.8,
+          "ETHUSDT": 0.19999999999999998
+        },
+        "pretrade_weights": {
+          "BTCUSDT": 0.7971075363732216,
+          "ETHUSDT": 0.20289246362677824
+        }
+      },
+      {
+        "date": "2026-11-12",
+        "decision_date": "2026-11-11",
+        "pretrade_equity": 85961.68920992993,
+        "posttrade_equity": 85960.60505298169,
+        "traded_notional": 1084.156948242431,
+        "transaction_cost": 1.0841569482424311,
+        "turnover": 0.012612094506365213,
+        "target_weights": {
+          "BTCUSDT": 0.8,
+          "ETHUSDT": 0.19999999999999982
+        },
+        "pretrade_weights": {
+          "BTCUSDT": 0.8063022636248308,
+          "ETHUSDT": 0.1936977363751692
+        }
+      }
+    ],
+    "metrics": {
+      "observations": 29,
+      "total_return": -0.14039394947018283,
+      "annualised_return": -0.8510366408963899,
+      "annualised_volatility": 0.37737270082083874,
+      "sharpe_ratio": -4.847901870130314,
+      "max_drawdown": 0.15687316783295924,
+      "total_transaction_cost": 102.35804265848196,
+      "total_turnover": 1.0261376295507647,
+      "total_cost_fraction": 0.0010261376295507647,
+      "rebalance_count": 5,
+      "final_equity": 85960.60505298169
+    },
+    "risk": {
+      "var": 0.041990942592175395,
+      "expected_shortfall": 0.054018075358447354,
+      "confidence": 0.95,
+      "observations": 29,
+      "tail_observations": 1.4500000000000013
+    },
+    "assumptions": [
+      "Research simulation; no trade execution or personalised advice.",
+      "Decisions at close t execute at close t+1; newly bought holdings earn returns after that close.",
+      "Input prices are caller-supplied adjusted closes in one common currency; no missing-price fill.",
+      "Fractional shares, complete liquidity and closing-price fills; tax, market impact and financing omitted.",
+      "Cost in basis points is charged per side on every absolute traded notional; cash earns zero.",
+      "Final holdings are marked to market without liquidation fees; weight caps apply at rebalances only.",
+      "Metrics start on the first signal date, include first-entry costs and use the selected periods-per-year convention.",
+      "Historical tail estimates and backtests do not predict future losses; asset selection may contain survivorship bias."
+    ]
+  },
+  "council": {
+    "schema_version": "1.0",
+    "mode": "offline_deterministic_research_council",
+    "source": {
+      "label": "CSV:prices.csv",
+      "synthetic": false,
+      "dataset_sha256": "bdb45aa7da6710cec867ce36b6397b5bcdf821a8a9368f667fc8361838ba314f",
+      "provenance_status": "caller_supplied_unverified"
+    },
+    "policy": {
+      "min_observations": 60,
+      "max_drawdown": 0.25,
+      "max_annualised_volatility": 0.4,
+      "high_cost_fraction": 0.02
+    },
+    "evidence": [
+      {
+        "id": "observations",
+        "label": "Realised return observations",
+        "value": 29,
+        "unit": "periods"
+      },
+      {
+        "id": "assets",
+        "label": "Asset count",
+        "value": 2,
+        "unit": "count"
+      },
+      {
+        "id": "annualised_return",
+        "label": "Annualised return",
+        "value": -0.8510366408963899,
+        "unit": "fraction"
+      },
+      {
+        "id": "annualised_volatility",
+        "label": "Annualised volatility",
+        "value": 0.37737270082083874,
+        "unit": "fraction"
+      },
+      {
+        "id": "expected_shortfall_95",
+        "label": "Historical expected shortfall at 95%",
+        "value": 0.054018075358447354,
+        "unit": "fraction"
+      },
+      {
+        "id": "max_drawdown",
+        "label": "Maximum drawdown magnitude",
+        "value": 0.15687316783295924,
+        "unit": "fraction"
+      },
+      {
+        "id": "sharpe",
+        "label": "Annualised Sharpe ratio",
+        "value": -4.847901870130314,
+        "unit": "ratio"
+      },
+      {
+        "id": "total_cost_fraction",
+        "label": "Sum of per-rebalance cost fractions",
+        "value": 0.0010261376295507647,
+        "unit": "fraction"
+      },
+      {
+        "id": "total_return",
+        "label": "Total return",
+        "value": -0.14039394947018283,
+        "unit": "fraction"
+      },
+      {
+        "id": "turnover",
+        "label": "Sum of traded notional divided by pre-trade equity",
+        "value": 1.0261376295507647,
+        "unit": "ratio"
+      },
+      {
+        "id": "var_95",
+        "label": "Historical value at risk at 95%",
+        "value": 0.041990942592175395,
+        "unit": "fraction"
+      }
+    ],
+    "roles": [
+      {
+        "role": "data_quality",
+        "mode": "deterministic_rule",
+        "status": "block",
+        "reasons": [
+          "The realised sample is too short for the configured review policy."
+        ],
+        "evidence_ids": [
+          "observations",
+          "assets"
+        ]
+      },
+      {
+        "role": "performance",
+        "mode": "deterministic_rule",
+        "status": "caution",
+        "reasons": [
+          "The observed total return is non-positive.",
+          "Historical return does not establish expected return or statistical significance."
+        ],
+        "evidence_ids": [
+          "total_return"
+        ]
+      },
+      {
+        "role": "risk",
+        "mode": "deterministic_rule",
+        "status": "pass",
+        "reasons": [
+          "Historical drawdown and volatility satisfy the configured review thresholds; future losses may be larger."
+        ],
+        "evidence_ids": [
+          "max_drawdown",
+          "annualised_volatility",
+          "var_95",
+          "expected_shortfall_95"
+        ]
+      },
+      {
+        "role": "costs",
+        "mode": "deterministic_rule",
+        "status": "pass",
+        "reasons": [
+          "Accumulated cost fractions are within the configured review threshold; market impact and taxes may remain unmodelled."
+        ],
+        "evidence_ids": [
+          "total_cost_fraction",
+          "turnover"
+        ]
+      },
+      {
+        "role": "model_critique",
+        "mode": "deterministic_rule",
+        "status": "caution",
+        "reasons": [
+          "The council checks arithmetic outputs against explicit rules; it does not validate a predictive investment thesis.",
+          "Check survivorship bias, data revisions, execution timing, parameter selection and untouched holdout results.",
+          "Role agreement is not a calibrated probability, independent expert evidence or an investment recommendation."
+        ],
+        "evidence_ids": [
+          "observations"
+        ]
+      },
+      {
+        "role": "synthesis",
+        "mode": "deterministic_rule",
+        "status": "block",
+        "reasons": [
+          "Pause interpretation and resolve failed gates."
+        ],
+        "evidence_ids": [
+          "observations",
+          "assets",
+          "annualised_return",
+          "annualised_volatility",
+          "expected_shortfall_95",
+          "max_drawdown",
+          "sharpe",
+          "total_cost_fraction",
+          "total_return",
+          "turnover",
+          "var_95"
+        ]
+      }
+    ],
+    "gates": [
+      {
+        "code": "sample_size",
+        "passed": false,
+        "evidence_ids": [
+          "observations"
+        ],
+        "description": "Realised sample meets the configured minimum."
+      },
+      {
+        "code": "required_metrics",
+        "passed": true,
+        "evidence_ids": [
+          "total_return",
+          "annualised_volatility",
+          "max_drawdown"
+        ],
+        "description": "Return, volatility and drawdown are available."
+      },
+      {
+        "code": "drawdown_limit",
+        "passed": true,
+        "evidence_ids": [
+          "max_drawdown"
+        ],
+        "description": "Historical drawdown is within the configured review limit."
+      },
+      {
+        "code": "volatility_limit",
+        "passed": true,
+        "evidence_ids": [
+          "annualised_volatility"
+        ],
+        "description": "Historical annualised volatility is within the configured review limit."
+      }
+    ],
+    "dissent": [
+      "data_quality",
+      "performance",
+      "model_critique"
+    ],
+    "outcome": "blocked_for_review",
+    "trace": [
+      {
+        "stage": "evidence",
+        "action": "Validate bounded inputs and retain typed measurements."
+      },
+      {
+        "stage": "independent_checks",
+        "action": "Evaluate data, performance, risk, costs and model assumptions."
+      },
+      {
+        "stage": "challenge",
+        "action": "Preserve all cautions and blockers; majority support cannot override hard gates."
+      },
+      {
+        "stage": "synthesis",
+        "action": "Produce a research-only disposition with no trading authority."
+      }
+    ],
+    "limitations": [
+      "No live prices, model calls, broker connectivity or automated investment decisions.",
+      "Thresholds are illustrative research controls, not personalised suitability advice.",
+      "A digest detects content changes; it does not prove data truth, authorship or authenticity."
+    ],
+    "report_sha256": "edc698c30caa4b5b17b850b1b14e2cfae3af4629150f35f1b804ff08fc318132"
+  },
+  "benchmark": {
+    "name": "Equal weight with matching calendar, lag and costs",
+    "metrics": {
+      "observations": 29,
+      "total_return": -0.15294008081474286,
+      "annualised_return": -0.8762023624829363,
+      "annualised_volatility": 0.4128110917782133,
+      "sharpe_ratio": -4.8444716677181425,
+      "max_drawdown": 0.16685450287033257,
+      "total_transaction_cost": 103.72517848789586,
+      "total_turnover": 1.0416314038022991,
+      "total_cost_fraction": 0.0010416314038022992,
+      "rebalance_count": 5,
+      "final_equity": 84705.99191852572
+    },
+    "equity_curve": [
+      100000.0,
+      99900.09990009991,
+      99138.09348652931,
+      98638.61600837347,
+      99171.36982804973,
+      99016.46486013805,
+      100520.79378527915,
+      101670.10709456241,
+      98312.70882137062,
+      98144.17360606659,
+      97370.13062213283,
+      96331.27951301401,
+      96219.68966301806,
+      97209.11424065719,
+      97662.74434908286,
+      93446.16433024828,
+      92915.47441334109,
+      93253.08550971854,
+      94123.04172463054,
+      92745.0345762586,
+      93572.59134563306,
+      98507.09061848512,
+      91991.22524077303,
+      91857.28420825233,
+      91903.81115236279,
+      88971.68686691625,
+      89444.09268963119,
+      86807.7169302124,
+      87004.92104142459,
+      84705.99191852572
+    ],
+    "dates": [
+      "2026-10-14",
+      "2026-10-15",
+      "2026-10-16",
+      "2026-10-17",
+      "2026-10-18",
+      "2026-10-19",
+      "2026-10-20",
+      "2026-10-21",
+      "2026-10-22",
+      "2026-10-23",
+      "2026-10-24",
+      "2026-10-25",
+      "2026-10-26",
+      "2026-10-27",
+      "2026-10-28",
+      "2026-10-29",
+      "2026-10-30",
+      "2026-10-31",
+      "2026-11-01",
+      "2026-11-02",
+      "2026-11-03",
+      "2026-11-04",
+      "2026-11-05",
+      "2026-11-06",
+      "2026-11-07",
+      "2026-11-08",
+      "2026-11-09",
+      "2026-11-10",
+      "2026-11-11",
+      "2026-11-12"
+    ],
+    "total_return_difference": 0.012546131344560035
+  },
+  "cost_sensitivity": {
+    "base_bps": 10.0,
+    "comparison_bps": 20.0,
+    "metrics": {
+      "observations": 29,
+      "total_return": -0.14127515933586182,
+      "annualised_return": -0.8529472715486377,
+      "annualised_volatility": 0.3772818991287023,
+      "sharpe_ratio": -4.883199219795833,
+      "max_drawdown": 0.15689606322621938,
+      "total_transaction_cost": 204.51340488453744,
+      "total_turnover": 1.025149986345867,
+      "total_cost_fraction": 0.0020502999726917342,
+      "rebalance_count": 5,
+      "final_equity": 85872.48406641382
+    },
+    "meaning": "One cost scenario; does not model liquidity or market impact."
+  },
+  "options": {
+    "input": {
+      "spot": 100.0,
+      "strike": 100.0,
+      "maturity": 1.0,
+      "rate": 0.05,
+      "volatility": 0.2,
+      "dividend": 0.0,
+      "option": "call"
+    },
+    "black_scholes": 10.450583572185565,
+    "binomial": 10.445585841284654,
+    "binomial_status": "Computed with 400 CRR steps.",
+    "monte_carlo": {
+      "price": 10.480590085144362,
+      "standard_error": 0.0748194536284193,
+      "ci_low": 10.333946650689695,
+      "ci_high": 10.627233519599029,
+      "paths": 20000,
+      "independent_pairs": 10000,
+      "seed": 42,
+      "confidence": 0.95
+    },
+    "greeks": {
+      "delta": 0.6368306511756191,
+      "gamma": 0.018762017345846895,
+      "vega": 37.52403469169379,
+      "rho": 53.232481545376345,
+      "theta": -6.414027546438197
+    },
+    "assumptions": "European exercise, constant volatility and continuous dividend yield. Risk-neutral pricing is not a return forecast."
+  },
+  "integrity_sha256": "6be3022c800fff6d42dc96ceab0efdc18176e2cf6885a55bde023b09a497c34c"
+}

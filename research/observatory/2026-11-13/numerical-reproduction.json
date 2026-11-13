@@ -1,0 +1,17 @@
+{
+  "status": "passed_with_floating_point_tolerance",
+  "relative_tolerance": 1e-10,
+  "absolute_tolerance": 1e-10,
+  "ignored_content_hash_paths": [
+    ".council.report_sha256",
+    ".integrity_sha256"
+  ],
+  "other_non_float_values": "exact_match",
+  "float_values_compared": 294,
+  "different_float_values": 78,
+  "maximum_absolute_difference": 1.8189894035458565e-11,
+  "maximum_scaled_difference": 2.0463289959731907e-14,
+  "left_integrity_sha256": "7446df1b2efdc4bdc50094d232a76e932b10b55330e547aa0f5f1e3edc718958",
+  "right_integrity_sha256": "6be3022c800fff6d42dc96ceab0efdc18176e2cf6885a55bde023b09a497c34c",
+  "meaning": "Numerical reproduction, not prospective performance or bitwise identity."
+}
