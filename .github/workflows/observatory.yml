@@ -1,0 +1,90 @@
+name: Atlas public-data observatory
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'observatory/**'
+      - '.opsbook/**'
+      - 'docs/opsbook/**'
+      - 'docs/OBSERVATORY.md'
+      - '.github/workflows/observatory.yml'
+  schedule:
+    - cron: '17 * * * *'
+    - cron: '27 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: observatory-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  environment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+        with:
+          python-version: '3.12'
+      - name: Read and apply the project Opsbook
+        run: |
+          python docs/opsbook/bootstrap.py
+          python .opsbook/bin/opsbook.py brief '{"task":"activate-source","source_kind":"public"}'
+          python .opsbook/bin/opsbook.py verify '{"task":"activate-source","source_kind":"public"}' --checks docs/opsbook/checks.json
+      - name: Observe current Singapore air quality
+        run: python -m observatory collect --sources nea --output output/environment
+      - name: Independently re-read saved observation
+        run: python -m observatory verify output/environment
+      - name: Preserve observation or failure evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: environment-${{ github.run_id }}-${{ github.run_attempt }}
+          path: output/environment/
+          retention-days: 14
+          if-no-files-found: error
+
+  historical-research:
+    if: github.event_name != 'schedule' || github.event.schedule == '27 2 * * *'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+        with:
+          python-version: '3.12'
+      - name: Read and apply the project Opsbook
+        run: |
+          python docs/opsbook/bootstrap.py
+          python .opsbook/bin/opsbook.py brief '{"task":"activate-source","source_kind":"public"}'
+          python .opsbook/bin/opsbook.py verify '{"task":"activate-source","source_kind":"public"}' --checks docs/opsbook/checks.json
+      - name: Collect licensed historical candles
+        run: python -m observatory collect --sources binance --days 90 --output output/market
+      - name: Independently re-read archives and exported prices
+        run: python -m observatory verify output/market
+      - name: Install offline numerical engine
+        run: python -m pip install -c requirements-tested.txt .
+      - name: Run declared historical experiment
+        run: >-
+          atlas-quant backtest output/market/prices.csv
+          --strategy minimum_variance --lookback 60 --rebalance-every 7
+          --cost-bps 10 --max-weight 0.8 --periods-per-year 365
+          --output output/research
+      - name: Check numerical report integrity
+        run: atlas-quant verify output/research/report.json
+      - name: Preserve research or failure evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: historical-research-${{ github.run_id }}-${{ github.run_attempt }}
+          path: output/
+          retention-days: 14
+          if-no-files-found: error

@@ -1,0 +1,66 @@
+{
+  "recorded_on": "2026-11-13",
+  "reviewer": "/root/observatory_review",
+  "type": "independent_readback_and_executable_scope_check",
+  "source_plan_sha256": "539a3f76be8619152aca43edf1f5d7cc9d9f49db5dcd3029dc33f4813c233f6f",
+  "accepted_rule_sha256": "b9391c6ade38a3b5461c3c9c459b3e7178cc9881f51073b179c25c7a9a853c3f",
+  "readbacks": [
+    {
+      "context": {
+        "task": "review",
+        "operation": "independent-adversarial-review"
+      },
+      "observed_revision": 1,
+      "observed_instructions": []
+    },
+    {
+      "context": {
+        "task": "activate-source",
+        "source_kind": "public",
+        "source": "coinbase-exchange",
+        "operation": "first-acquisition",
+        "intended_use": "agent-validation"
+      },
+      "observed_revision": 1,
+      "observed_rule": "rule-f15577fbefbd",
+      "observed_check": "review-source-permissions",
+      "observed_instruction_requires_stop_for_unresolved_or_disallowed_source": true
+    }
+  ],
+  "executable_checks": [
+    {
+      "command": [
+        "python",
+        "docs/opsbook/verify_source_policy.py",
+        "docs/opsbook/pilot-plan.json"
+      ],
+      "exit": 0,
+      "observed_pass": true,
+      "observed_sources": [
+        "nea_pm25",
+        "binance_vision"
+      ],
+      "observed_use": "noncommercial_research"
+    },
+    {
+      "command": [
+        "python",
+        "docs/opsbook/verify_source_policy.py",
+        "TEMPORARY_PLAN"
+      ],
+      "temporary_plan_change": {
+        "sources": [
+          "coinbase_live"
+        ]
+      },
+      "exit": 1,
+      "stdout": "{\"pass\": false, \"reason\": \"Proposed source or use is outside the reviewed pilot scope\"}",
+      "stderr": ""
+    }
+  ],
+  "limits": [
+    "No network acquisition occurred during these checks.",
+    "This is independent procedure readback and scope enforcement, not learner improvement.",
+    "A passed check records policy consistency, not new rights or provider permission."
+  ]
+}

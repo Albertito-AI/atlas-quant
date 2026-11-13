@@ -1,0 +1,54 @@
+[
+  {
+    "id": "public-feed-rights-near-miss",
+    "set": "practice",
+    "context": {
+      "task": "activate-source",
+      "source_kind": "public",
+      "source": "coinbase-live",
+      "purpose": "ai-research"
+    },
+    "expected": [
+      "review-source-permissions"
+    ],
+    "evidence": "Observed design near miss, 13 November 2026: public unauthenticated access was technically available, but current Coinbase terms section 3(5) restrict AI research without consent. No unauthorised ingestion occurred. See INCIDENT.md."
+  },
+  {
+    "id": "open-environment-source",
+    "set": "practice",
+    "context": {
+      "task": "activate-source",
+      "source_kind": "public",
+      "source": "nea-pm25",
+      "purpose": "noncommercial-research"
+    },
+    "expected": [
+      "review-source-permissions"
+    ],
+    "evidence": "Labelled practice scenario: an openly licensed environmental source still needs purpose, attribution and licence review at activation."
+  },
+  {
+    "id": "inspect-feed-documentation",
+    "set": "practice",
+    "context": {
+      "task": "inspect",
+      "source_kind": "public",
+      "source": "kraken-docs",
+      "purpose": "read-documentation"
+    },
+    "expected": [],
+    "evidence": "Labelled counterexample: reading public API documentation without activating a feed should not invoke an acquisition gate."
+  },
+  {
+    "id": "document-source-decision",
+    "set": "practice",
+    "context": {
+      "task": "document",
+      "source_kind": "public",
+      "source": "binance-vision",
+      "purpose": "edit-internal-note"
+    },
+    "expected": [],
+    "evidence": "Labelled counterexample: editing an existing source decision note without acquiring data does not activate a source."
+  }
+]
