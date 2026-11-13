@@ -1,0 +1,170 @@
+{
+  "work_id": "ATLAS-OBS-20261113",
+  "implementation_commit": "1a4d12fb82f538997ca547b47c8e3de53d50c3f5",
+  "pull_request": "https://github.com/Albertito-AI/atlas-quant/pull/13",
+  "hosted_run": "https://github.com/Albertito-AI/atlas-quant/actions/runs/43389389027",
+  "hosted_run_id": 43389389027,
+  "hosted_jobs": {
+    "environment": "success; downloaded bundle independently verified offline",
+    "historical-research": "success; downloaded bundle independently verified offline and numerical report independently recomputed"
+  },
+  "source_modes": {
+    "nea_pm25": "current environmental observation",
+    "binance_vision": "historical non-commercial research; no live exchange connection"
+  },
+  "historical_window": {
+    "start_date": "2026-08-15",
+    "end_date": "2026-11-12",
+    "days": 90,
+    "symbols": [
+      "BTCUSDT",
+      "ETHUSDT"
+    ],
+    "quote_currency": "USDT"
+  },
+  "historical_candles": 180,
+  "historical_successful_http_acquisitions": 60,
+  "code_validation": {
+    "local_python": "3.12.14",
+    "hosted_python": "3.12.16",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "tests": 248,
+    "opsbook_policy_tests": 8,
+    "repository_policy_findings": 0,
+    "existing_visual_and_agent_lab_evidence": "passed",
+    "dependency_consistency": "passed",
+    "hosted_pr_test_run": 43389224789,
+    "hosted_pr_dependency_run": 43389224816,
+    "hosted_pr_checks": "success",
+    "initial_main_test_run": 43389388982,
+    "initial_main_test_result": "failure in a wall-clock-dependent synthetic ZIP fixture; production source collection and numerical run succeeded"
+  },
+  "independent_numerical_reproduction": {
+    "status": "passed_with_floating_point_tolerance",
+    "relative_tolerance": 1e-10,
+    "absolute_tolerance": 1e-10,
+    "ignored_content_hash_paths": [
+      ".council.report_sha256",
+      ".integrity_sha256"
+    ],
+    "other_non_float_values": "exact_match",
+    "float_values_compared": 294,
+    "different_float_values": 78,
+    "maximum_absolute_difference": 1.8189894035458565e-11,
+    "maximum_scaled_difference": 2.0463289959731907e-14,
+    "left_integrity_sha256": "7446df1b2efdc4bdc50094d232a76e932b10b55330e547aa0f5f1e3edc718958",
+    "right_integrity_sha256": "6be3022c800fff6d42dc96ceab0efdc18176e2cf6885a55bde023b09a497c34c",
+    "meaning": "Numerical reproduction, not prospective performance or bitwise identity."
+  },
+  "retained_failed_attempts": [
+    {
+      "run": "launch-20261113",
+      "status": "incomplete",
+      "started_at_utc": "2026-11-13T07:44:43.087584Z",
+      "completed_at_utc": "2026-11-13T07:54:49.297168Z",
+      "duration_seconds": 606.209584,
+      "successful_acquisitions": 82,
+      "market": {
+        "error": "EvidenceError: Bounded collection time budget exhausted",
+        "mode": "historical_replay",
+        "prices_file": null,
+        "status": "failed",
+        "verified_candles_before_failure": 40
+      },
+      "offline_replay": "verified_incomplete; no complete prices.csv exported"
+    },
+    {
+      "run": "launch-batched-20261113",
+      "status": "incomplete",
+      "started_at_utc": "2026-11-13T07:50:45.014191Z",
+      "completed_at_utc": "2026-11-13T07:52:47.123706Z",
+      "duration_seconds": 122.109515,
+      "successful_acquisitions": 25,
+      "market": {
+        "error": "URLError: <urlopen error timed out>",
+        "mode": "historical_replay",
+        "prices_file": null,
+        "status": "failed",
+        "verified_candles_before_failure": 162
+      },
+      "offline_replay": "verified_incomplete; no complete prices.csv exported"
+    }
+  ],
+  "local_fresh_retry": "output/launch-verified-20261113 completed both sources;64 evidence files independently replayed",
+  "opsbook": {
+    "runtime_commit": "94b84261d0d2ae23f783522a3c2e4cb697aecde3",
+    "manual_revision": 1,
+    "rule_id": "rule-f15577fbefbd",
+    "practice_cases": 4,
+    "independently_labelled_routing_cases": 6,
+    "receiving_agent_readback": "docs/opsbook/independent-readback.json",
+    "actual_verifier_repair": "docs/opsbook/observed-verifier-repair.json",
+    "learning_gain": "not_established"
+  },
+  "automation": {
+    "environmental_attempts": "hourly minute17 UTC",
+    "historical_attempts": "daily02:27UTC /10:27Asia/Singapore",
+    "health_review": "existing Atlas Flexible Zero Fail every6hours; next13Nov2026 18:33:04+08:00 at setup",
+    "development_review": "existing Academic GitHub Development daily08:00Asia/Singapore",
+    "school_review": "existing Atlas School Review weeklyMonday08:00Asia/Singapore",
+    "website_handoff": "existing Website Care and Reach; queued, not publication",
+    "source_review_due": "2026-12-13",
+    "original_task_prompts_and_schedules": "preserved; no new task created"
+  },
+  "limitations": [
+    "Selected two-asset historical experiment with short evaluation window; no prospective accuracy or profitability claim.",
+    "Source access and programme code do not establish graduate learning, operational admission or mathematical novelty.",
+    "Scheduled attempts may be delayed or fail.",
+    "Source review expires unless current terms are actually reviewed."
+  ],
+  "artifacts": [
+    {
+      "file": "atlas-environment-first-run.zip",
+      "bytes": 2622,
+      "sha256": "35890813e3f0d211b0d1002f244b9c34307a975eb8106bef6b87f0f201ee1a34"
+    },
+    {
+      "file": "atlas-market-first-run.zip",
+      "bytes": 59243,
+      "sha256": "4ee17e21d66e97180a08e27cfab19f3d71d91b6c3244507d4fbd9a3f6e16ada0"
+    },
+    {
+      "file": "compare_reports.py",
+      "bytes": 2965,
+      "sha256": "ba2dd0224b247fa9fdd48a658047a319c86bf8ad56a6e5792a035876427a6111"
+    },
+    {
+      "file": "local-reproduction-report.json",
+      "bytes": 20986,
+      "sha256": "b2b8614a1ad3614c6070bbb22b1cdd35f347fa00702fe62b57885d7e12ff9d3d"
+    },
+    {
+      "file": "numerical-reproduction.json",
+      "bytes": 709,
+      "sha256": "1669b475100bc59819e2c6ea87c4f138ed0af36b6b98ea03ff34175d01d22eef"
+    },
+    {
+      "file": "retained-failed-attempts.zip",
+      "bytes": 58559,
+      "sha256": "ec955e4fbf89448661aa9f5d829730a475a66301a061df6299796f8570b936b7"
+    },
+    {
+      "file": "local-successful-attempt.zip",
+      "bytes": 41291,
+      "sha256": "86aa164b0b8769b4f176d8aab41c3223229767fccb3b2627df86b1707555d8c7"
+    }
+  ],
+  "fixture_repair": {
+    "affected_test": "test_full_monthly_collection_replays_with_bounded_concurrency",
+    "failed_job": 131765404775,
+    "cause": "Fixture regenerated a ZIP and its checksum separately using wall-clock ZIP metadata; a two-second timestamp boundary changed the bytes.",
+    "before_reproduction": "Identical logical monthly data at mocked seconds0 and2 produced distinct bytes/checksums; cross-paired parse raised Archive checksum mismatch.",
+    "change": "Fixed ZIP timestamps and compression in daily/monthly test fixtures; production checksum validation unchanged.",
+    "new_regression": "test_archive_fixtures_are_independent_of_wall_clock",
+    "runtime_pilot_sha256": "798bea93ffa87ecc5d2853d1ca65055e4e9126649a5a7c7fc8ffef78901c5fb8",
+    "repaired_tests_sha256": "c870863f8a5a779dfcee9ed17b3bd8d288ca22131d2393622e57f56ad517ccfc",
+    "validation": "249 local tests passed; independent reviewer forced any wall-clock consultation to fail and verified both builders, full monthly replay and continued rejection of corrupted archives. Hosted results are attached to PR14.",
+    "reviewer": "separate observatory_review agent; code unchanged by reviewer"
+  }
+}

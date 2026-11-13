@@ -39,7 +39,9 @@ def candle_archive(symbol="BTCUSDT", day=date(2026, 11, 12), *, scale=1_000_000,
     name = f"{symbol}-1d-{day.isoformat()}"
     buffer = io.BytesIO()
     with zipfile.ZipFile(buffer, "w", compression=zipfile.ZIP_DEFLATED) as archive:
-        archive.writestr(filename or name + ".csv", text)
+        entry = zipfile.ZipInfo(filename or name + ".csv", date_time=(2026, 1, 1, 0, 0, 0))
+        entry.compress_type = zipfile.ZIP_DEFLATED
+        archive.writestr(entry, text)
     raw = buffer.getvalue()
     return raw, (hashlib.sha256(raw).hexdigest() + "  " + name + ".zip\n").encode()
 
@@ -57,12 +59,23 @@ def monthly_archive(symbol="BTCUSDT", month="2026-10", *, change_rows=None):
     name = f"{symbol}-1d-{month}"
     buffer = io.BytesIO()
     with zipfile.ZipFile(buffer, "w", compression=zipfile.ZIP_DEFLATED) as archive:
-        archive.writestr(name + ".csv", "\n".join(rows) + "\n")
+        entry = zipfile.ZipInfo(name + ".csv", date_time=(2026, 1, 1, 0, 0, 0))
+        entry.compress_type = zipfile.ZIP_DEFLATED
+        archive.writestr(entry, "\n".join(rows) + "\n")
     raw = buffer.getvalue()
     return raw, (hashlib.sha256(raw).hexdigest() + "  " + name + ".zip\n").encode()
 
 
 class ObservatoryTests(unittest.TestCase):
+    def test_archive_fixtures_are_independent_of_wall_clock(self):
+        for builder in (candle_archive, monthly_archive):
+            with self.subTest(builder=builder.__name__):
+                with patch("zipfile.time.localtime", return_value=(2026, 11, 13, 0, 0, 0, 4, 317, 0)):
+                    first = builder()
+                with patch("zipfile.time.localtime", return_value=(2026, 11, 13, 0, 0, 2, 4, 317, 0)):
+                    second = builder()
+                self.assertEqual(first, second)
+
     def test_current_nea_units_and_timezones(self):
         result = parse_nea(nea_payload(), NOW)
         self.assertEqual(result["status"], "ok")

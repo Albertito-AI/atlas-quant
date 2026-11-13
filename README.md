@@ -21,7 +21,8 @@ for current Singapore air-quality observations and licensed, non-commercial
 historical BTC/ETH market research. It retains source records, checksums and
 replayable evidence, and applies the actual [project Opsbook](docs/opsbook/README.md)
 before acquisition. [Scheduled runs and their artifacts](https://github.com/Albertito-AI/atlas-quant/actions/workflows/observatory.yml)
-show actual execution, including failures.
+show actual execution, including failures. The [first verified launch record](research/observatory/2026-11-13/README.md)
+preserves the original hosted artifacts, failed attempts and independent numerical reproduction.
 
 The numerical package remains offline. Live exchange connections are disabled
 pending the required source-use decisions. Collection, historical backtests and
