@@ -1,0 +1,20 @@
+{
+  "title": "Atlas Quant",
+  "description": "Reproducible financial mathematics, transparent portfolio research and offline evidence reports. This deposit preserves a dated source snapshot of the implementation and documentation, with the limitations stated in the repository.",
+  "creators": [
+    {
+      "name": "Tan, Sin Hon Albert",
+      "orcid": "0009-0001-8996-7933"
+    }
+  ],
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "MIT",
+  "notes": "MIT applies to original software. Source observations and third-party materials retain their own licences, including non-commercial restrictions where stated. Synthetic examples do not establish predictive accuracy or profitable trading. Archival publication does not establish peer review, independent validation or production readiness.",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/Albertito-AI/atlas-quant",
+      "relation": "isSupplementTo"
+    }
+  ]
+}
