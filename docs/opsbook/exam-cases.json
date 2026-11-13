@@ -1,0 +1,93 @@
+[
+  {
+    "set": "exam",
+    "id": "exam-nea-first-acquisition",
+    "context": {
+      "task": "activate-source",
+      "source_kind": "public",
+      "source": "nea-pm25",
+      "operation": "first-acquisition",
+      "intended_use": "public-attributed-environmental-research"
+    },
+    "expected": [
+      "review-source-permissions"
+    ],
+    "evidence": "Independently labelled synthetic routing scenario: enabling an apparently permissive source still requires checking the intended use, attribution and applicable source conditions."
+  },
+  {
+    "set": "exam",
+    "id": "exam-coinbase-agent-validation",
+    "context": {
+      "task": "activate-source",
+      "source_kind": "public",
+      "source": "coinbase-exchange",
+      "operation": "first-acquisition",
+      "intended_use": "agent-validation"
+    },
+    "expected": [
+      "review-source-permissions"
+    ],
+    "evidence": "Independently labelled synthetic routing scenario: public technical access does not remove restrictions on AI validation. The permission gate must separately decide whether acquisition may proceed."
+  },
+  {
+    "set": "exam",
+    "id": "exam-binance-live-unauthenticated",
+    "context": {
+      "task": "activate-source",
+      "source_kind": "public",
+      "source": "binance-spot-live",
+      "operation": "first-acquisition",
+      "intended_use": "public-agent-research",
+      "authentication": "none-required"
+    },
+    "expected": [
+      "review-source-permissions"
+    ],
+    "evidence": "Independently labelled synthetic routing scenario: an endpoint requiring no authentication is insufficient evidence of permission for the proposed use."
+  },
+  {
+    "set": "exam",
+    "id": "exam-archive-purpose-expansion",
+    "context": {
+      "task": "activate-source",
+      "source_kind": "public",
+      "source": "binance-vision-archives",
+      "operation": "change-intended-use",
+      "previous_use": "non-commercial-academic-replay",
+      "intended_use": "paid-signal-distribution",
+      "previously_enabled": "true"
+    },
+    "expected": [
+      "review-source-permissions"
+    ],
+    "evidence": "Independently labelled synthetic routing scenario and adversarial boundary: approval for an earlier non-commercial purpose does not authorise a materially different commercial purpose."
+  },
+  {
+    "set": "exam",
+    "id": "exam-inspect-nea-schema",
+    "context": {
+      "task": "inspect",
+      "source_kind": "public",
+      "source": "nea-pm25",
+      "operation": "read-existing-schema-notes",
+      "data_acquisition": "false",
+      "intended_use_changed": "false"
+    },
+    "expected": [],
+    "evidence": "Independently labelled synthetic unaffected control: reading existing local schema notes neither enables collection nor changes the source's intended use."
+  },
+  {
+    "set": "exam",
+    "id": "exam-document-coinbase-exclusion",
+    "context": {
+      "task": "document",
+      "source_kind": "public",
+      "source": "coinbase-exchange",
+      "operation": "record-existing-exclusion",
+      "data_acquisition": "false",
+      "intended_use_changed": "false"
+    },
+    "expected": [],
+    "evidence": "Independently labelled synthetic unaffected control: documenting an already recorded exclusion does not activate the source or acquire its market data."
+  }
+]

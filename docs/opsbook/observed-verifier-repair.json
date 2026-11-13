@@ -1,0 +1,90 @@
+{
+  "incident_id": "AQ-OBS-20261113-EMPTY-SOURCE-VERIFIER",
+  "recorded_at_utc": "2026-11-13T07:50:58.124622+00:00",
+  "classification": "Observed software defect reproduced with synthetic adversarial evidence; not a live upstream-data incident.",
+  "independent_reviewer": "/root/observatory_review",
+  "observation": {
+    "before": {
+      "source_digest": "NOT_CAPTURED",
+      "git_commit": "NOT_CAPTURED; uncommitted implementation",
+      "function": "observatory.pilot.verify_run",
+      "valid_bundle_result": {
+        "status": "verified",
+        "collection_status": "ok",
+        "files_checked": 3,
+        "network_requests": 0
+      },
+      "tampered_bundle_result": {
+        "status": "verified",
+        "collection_status": "ok",
+        "files_checked": 3,
+        "network_requests": 0
+      }
+    },
+    "mutation": "Generate a valid NEA-only synthetic bundle; replace report.sources with {}; retain report.status=ok; recompute the report byte count and SHA-256 in manifest.json; replay the bundle.",
+    "mechanism": "The initial verifier did not require the requested source set to be present. Empty-loop checks and all([]) allowed an empty report to appear complete even when byte hashes were self-consistent.",
+    "after": {
+      "historical_fix_digest": "NOT_CAPTURED",
+      "git_commit": "NOT_CAPTURED; working-tree repair",
+      "tampered_bundle_exception": "EvidenceError",
+      "message": "Report is missing required sources or contains unexpected sources"
+    },
+    "cli_exit_status": "NOT_OBSERVED. The reviewer called verify_run directly; harness exits do not establish a verify CLI exit.",
+    "counterexamples": [
+      "The same unchanged valid bundle must continue to replay successfully without network access.",
+      "Changing a numerical observation and recomputing its report hash must still fail semantic replay."
+    ]
+  },
+  "repair": {
+    "behaviour": "Derive expected source names from manifest parameters, require exactly that nonempty set, validate metadata and replay observations from retained raw inputs before accepting derived evidence.",
+    "current_code_path": "observatory/pilot.py",
+    "current_regression": "tests/test_observatory.py::ObservatoryTests.test_missing_sources_cannot_pass_empty_all"
+  },
+  "current_validation_snapshot": {
+    "captured_at_utc": "2026-11-13T07:50:58.124639+00:00",
+    "kind": "working-tree SHA-256 snapshot, not a Git commit or final release identity",
+    "checkout_base_commit": "c117a38901895dab3a36c490bbd9929ecac04e27",
+    "base_commit_contains_this_repair": false,
+    "before_file_sha256": {
+      "observatory/pilot.py": "fb6e5a9ff46833dfc0f341fc0cd5e17b6925f4beb5d5ca5ce0b533dea272e2ee",
+      "tests/test_observatory.py": "9d39ff5ddf66754a726e835852b93cbe1c0688e6d623accaae234647f8c9f5d8"
+    },
+    "after_file_sha256": {
+      "observatory/pilot.py": "fb6e5a9ff46833dfc0f341fc0cd5e17b6925f4beb5d5ca5ce0b533dea272e2ee",
+      "tests/test_observatory.py": "9d39ff5ddf66754a726e835852b93cbe1c0688e6d623accaae234647f8c9f5d8"
+    },
+    "files_unchanged_during_validation": true,
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "test_observatory.ObservatoryTests.test_missing_sources_cannot_pass_empty_all",
+      "test_observatory.ObservatoryTests.test_complete_collection_replays_without_network",
+      "test_observatory.ObservatoryTests.test_report_semantic_modification_detected_even_with_updated_hash",
+      "-v"
+    ],
+    "environment": {
+      "PYTHONPATH": "tests"
+    },
+    "exit": 0,
+    "stdout": "",
+    "stderr": "test_missing_sources_cannot_pass_empty_all (test_observatory.ObservatoryTests.test_missing_sources_cannot_pass_empty_all) ... ok\ntest_complete_collection_replays_without_network (test_observatory.ObservatoryTests.test_complete_collection_replays_without_network) ... ok\ntest_report_semantic_modification_detected_even_with_updated_hash (test_observatory.ObservatoryTests.test_report_semantic_modification_detected_even_with_updated_hash) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.019s\n\nOK\n"
+  },
+  "candidate_procedure": {
+    "state": "candidate_not_proposed_or_promoted",
+    "instruction": "Before publishing or relying on an observation bundle, perform semantic replay against the declared source contract and retained inputs. Require all requested sources, challenge the verifier with a rehashed tampered bundle, and preserve an unchanged valid bundle as a control. A matching hash establishes byte consistency, not completeness, meaning, authenticity or truth.",
+    "active_manual_revision": 1,
+    "active_manual_unchanged": true,
+    "next_step": "Independently label fresh routing cases and test the candidate scope before any second rule proposal or promotion."
+  },
+  "latency_followup": {
+    "state": "awaiting_owner_run_receipt",
+    "claim": "Request-cost and batching work is in progress. This receipt records no live latency-failure conclusion or batching-performance result."
+  },
+  "claim_limits": [
+    "No agent learning gain is established.",
+    "No second Opsbook rule was promoted.",
+    "No historical code digest or Git commit has been reconstructed or invented.",
+    "Synthetic inputs reproduce an actual verifier defect; they are not live market or environmental performance evidence."
+  ]
+}

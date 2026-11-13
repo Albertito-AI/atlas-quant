@@ -1,0 +1,9 @@
+{
+  "id": "review-all-public-operations",
+  "when": {
+    "source_kind": "public"
+  },
+  "check": "review-source-permissions",
+  "instruction": "Before any operation involving public sources, run the source-permission gate.",
+  "basis": "public-feed-rights-near-miss"
+}

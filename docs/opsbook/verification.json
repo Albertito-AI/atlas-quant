@@ -1,0 +1,10 @@
+{
+  "checks": [
+    {
+      "check": "review-source-permissions",
+      "exit": 0
+    }
+  ],
+  "pass": true,
+  "revision": 1
+}

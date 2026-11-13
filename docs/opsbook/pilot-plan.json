@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "use": "noncommercial_research",
+  "sources": ["nea_pm25", "binance_vision"],
+  "acknowledge_conditions": true,
+  "review_due": "2026-12-13"
+}

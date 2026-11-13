@@ -34,6 +34,8 @@ jobs:
         run: python scripts/security_check.py
       - name: Run numerical, accounting and adversarial tests
         run: python -m unittest discover -s tests -v
+      - name: Test the executable Opsbook source gate
+        run: python -m unittest discover -s docs/opsbook -p "test_*.py" -v
       - name: Verify reproducible visual evidence
         run: python scripts/build_visuals.py --check
       - name: Verify probabilistic agent-lab evidence

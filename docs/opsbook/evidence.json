@@ -1,0 +1,453 @@
+{
+  "state": "installed",
+  "baseline": {
+    "revision": 0,
+    "instructions": []
+  },
+  "rejected": {
+    "practice": {
+      "cases": 4,
+      "correct_before": 2,
+      "correct_after": 2,
+      "rows": [
+        {
+          "id": "document-source-decision",
+          "before": [],
+          "after": [
+            "review-source-permissions"
+          ],
+          "expected": [],
+          "fixed": [],
+          "introduced": [
+            "review-source-permissions"
+          ]
+        },
+        {
+          "id": "inspect-feed-documentation",
+          "before": [],
+          "after": [
+            "review-source-permissions"
+          ],
+          "expected": [],
+          "fixed": [],
+          "introduced": [
+            "review-source-permissions"
+          ]
+        },
+        {
+          "id": "open-environment-source",
+          "before": [],
+          "after": [
+            "review-source-permissions"
+          ],
+          "expected": [
+            "review-source-permissions"
+          ],
+          "fixed": [
+            "review-source-permissions"
+          ],
+          "introduced": []
+        },
+        {
+          "id": "public-feed-rights-near-miss",
+          "before": [],
+          "after": [
+            "review-source-permissions"
+          ],
+          "expected": [
+            "review-source-permissions"
+          ],
+          "fixed": [
+            "review-source-permissions"
+          ],
+          "introduced": []
+        }
+      ]
+    },
+    "exam": {
+      "cases": 6,
+      "correct_before": 2,
+      "correct_after": 4,
+      "rows": [
+        {
+          "id": "exam-archive-purpose-expansion",
+          "before": [],
+          "after": [
+            "review-source-permissions"
+          ],
+          "expected": [
+            "review-source-permissions"
+          ],
+          "fixed": [
+            "review-source-permissions"
+          ],
+          "introduced": []
+        },
+        {
+          "id": "exam-binance-live-unauthenticated",
+          "before": [],
+          "after": [
+            "review-source-permissions"
+          ],
+          "expected": [
+            "review-source-permissions"
+          ],
+          "fixed": [
+            "review-source-permissions"
+          ],
+          "introduced": []
+        },
+        {
+          "id": "exam-coinbase-agent-validation",
+          "before": [],
+          "after": [
+            "review-source-permissions"
+          ],
+          "expected": [
+            "review-source-permissions"
+          ],
+          "fixed": [
+            "review-source-permissions"
+          ],
+          "introduced": []
+        },
+        {
+          "id": "exam-document-coinbase-exclusion",
+          "before": [],
+          "after": [
+            "review-source-permissions"
+          ],
+          "expected": [],
+          "fixed": [],
+          "introduced": [
+            "review-source-permissions"
+          ]
+        },
+        {
+          "id": "exam-inspect-nea-schema",
+          "before": [],
+          "after": [
+            "review-source-permissions"
+          ],
+          "expected": [],
+          "fixed": [],
+          "introduced": [
+            "review-source-permissions"
+          ]
+        },
+        {
+          "id": "exam-nea-first-acquisition",
+          "before": [],
+          "after": [
+            "review-source-permissions"
+          ],
+          "expected": [
+            "review-source-permissions"
+          ],
+          "fixed": [
+            "review-source-permissions"
+          ],
+          "introduced": []
+        }
+      ]
+    },
+    "eligible": false
+  },
+  "accepted": {
+    "practice": {
+      "cases": 4,
+      "correct_before": 2,
+      "correct_after": 4,
+      "rows": [
+        {
+          "id": "document-source-decision",
+          "before": [],
+          "after": [],
+          "expected": [],
+          "fixed": [],
+          "introduced": []
+        },
+        {
+          "id": "inspect-feed-documentation",
+          "before": [],
+          "after": [],
+          "expected": [],
+          "fixed": [],
+          "introduced": []
+        },
+        {
+          "id": "open-environment-source",
+          "before": [],
+          "after": [
+            "review-source-permissions"
+          ],
+          "expected": [
+            "review-source-permissions"
+          ],
+          "fixed": [
+            "review-source-permissions"
+          ],
+          "introduced": []
+        },
+        {
+          "id": "public-feed-rights-near-miss",
+          "before": [],
+          "after": [
+            "review-source-permissions"
+          ],
+          "expected": [
+            "review-source-permissions"
+          ],
+          "fixed": [
+            "review-source-permissions"
+          ],
+          "introduced": []
+        }
+      ]
+    },
+    "exam": {
+      "cases": 6,
+      "correct_before": 2,
+      "correct_after": 6,
+      "rows": [
+        {
+          "id": "exam-archive-purpose-expansion",
+          "before": [],
+          "after": [
+            "review-source-permissions"
+          ],
+          "expected": [
+            "review-source-permissions"
+          ],
+          "fixed": [
+            "review-source-permissions"
+          ],
+          "introduced": []
+        },
+        {
+          "id": "exam-binance-live-unauthenticated",
+          "before": [],
+          "after": [
+            "review-source-permissions"
+          ],
+          "expected": [
+            "review-source-permissions"
+          ],
+          "fixed": [
+            "review-source-permissions"
+          ],
+          "introduced": []
+        },
+        {
+          "id": "exam-coinbase-agent-validation",
+          "before": [],
+          "after": [
+            "review-source-permissions"
+          ],
+          "expected": [
+            "review-source-permissions"
+          ],
+          "fixed": [
+            "review-source-permissions"
+          ],
+          "introduced": []
+        },
+        {
+          "id": "exam-document-coinbase-exclusion",
+          "before": [],
+          "after": [],
+          "expected": [],
+          "fixed": [],
+          "introduced": []
+        },
+        {
+          "id": "exam-inspect-nea-schema",
+          "before": [],
+          "after": [],
+          "expected": [],
+          "fixed": [],
+          "introduced": []
+        },
+        {
+          "id": "exam-nea-first-acquisition",
+          "before": [],
+          "after": [
+            "review-source-permissions"
+          ],
+          "expected": [
+            "review-source-permissions"
+          ],
+          "fixed": [
+            "review-source-permissions"
+          ],
+          "introduced": []
+        }
+      ]
+    },
+    "eligible": true
+  },
+  "rule": {
+    "id": "rule-f15577fbefbd",
+    "when": {
+      "task": "activate-source"
+    },
+    "check": "review-source-permissions",
+    "instruction": "Before activating a source or materially changing its intended use, run the reviewed source-permission gate for the exact source plan. Check AI use, publication, attribution and commercial restrictions against current primary terms. Public access and a passed routing test confer no permission. Stop an unresolved or disallowed source; record the evidence and a permitted alternative.",
+    "basis": "public-feed-rights-near-miss"
+  },
+  "revision": 1,
+  "readback": {
+    "revision": 1,
+    "instructions": [
+      {
+        "basis": "public-feed-rights-near-miss",
+        "check": "review-source-permissions",
+        "id": "rule-f15577fbefbd",
+        "instruction": "Before activating a source or materially changing its intended use, run the reviewed source-permission gate for the exact source plan. Check AI use, publication, attribution and commercial restrictions against current primary terms. Public access and a passed routing test confer no permission. Stop an unresolved or disallowed source; record the evidence and a permitted alternative.",
+        "when": {
+          "task": "activate-source"
+        }
+      }
+    ]
+  },
+  "unaffected_control": {
+    "revision": 1,
+    "instructions": []
+  },
+  "missing_check": {
+    "revision": 1,
+    "missing": [
+      "review-source-permissions"
+    ],
+    "pass": false
+  },
+  "transcript": [
+    {
+      "command": [
+        "init"
+      ],
+      "exit": 0,
+      "stdout": "{\n  \"revision\": 0\n}",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "brief",
+        "{\"task\":\"activate-source\",\"source_kind\":\"public\"}"
+      ],
+      "exit": 0,
+      "stdout": "{\n  \"revision\": 0,\n  \"instructions\": []\n}",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "record",
+        "docs/opsbook/practice-cases.json"
+      ],
+      "exit": 0,
+      "stdout": "{\n  \"cases\": 4\n}",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "record",
+        "docs/opsbook/exam-cases.json"
+      ],
+      "exit": 0,
+      "stdout": "{\n  \"cases\": 10\n}",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "propose",
+        "docs/opsbook/overbroad-rule.json"
+      ],
+      "exit": 0,
+      "stdout": "{\n  \"proposal\": \"16857829a4d199b1b43eb4e3\",\n  \"base\": 0,\n  \"rule\": {\n    \"id\": \"review-all-public-operations\",\n    \"when\": {\n      \"source_kind\": \"public\"\n    },\n    \"check\": \"review-source-permissions\",\n    \"instruction\": \"Before any operation involving public sources, run the source-permission gate.\",\n    \"basis\": \"public-feed-rights-near-miss\"\n  },\n  \"replaces\": null,\n  \"case_digest\": \"2f47bae62b9c8a76588bd6571cacbb5cd75ec9e45f965e136f5cdcb16de348d6\"\n}",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "evaluate",
+        "16857829a4d199b1b43eb4e3"
+      ],
+      "exit": 0,
+      "stdout": "{\n  \"practice\": {\n    \"cases\": 4,\n    \"correct_before\": 2,\n    \"correct_after\": 2,\n    \"rows\": [\n      {\n        \"id\": \"document-source-decision\",\n        \"before\": [],\n        \"after\": [\n          \"review-source-permissions\"\n        ],\n        \"expected\": [],\n        \"fixed\": [],\n        \"introduced\": [\n          \"review-source-permissions\"\n        ]\n      },\n      {\n        \"id\": \"inspect-feed-documentation\",\n        \"before\": [],\n        \"after\": [\n          \"review-source-permissions\"\n        ],\n        \"expected\": [],\n        \"fixed\": [],\n        \"introduced\": [\n          \"review-source-permissions\"\n        ]\n      },\n      {\n        \"id\": \"open-environment-source\",\n        \"before\": [],\n        \"after\": [\n          \"review-source-permissions\"\n        ],\n        \"expected\": [\n          \"review-source-permissions\"\n        ],\n        \"fixed\": [\n          \"review-source-permissions\"\n        ],\n        \"introduced\": []\n      },\n      {\n        \"id\": \"public-feed-rights-near-miss\",\n        \"before\": [],\n        \"after\": [\n          \"review-source-permissions\"\n        ],\n        \"expected\": [\n          \"review-source-permissions\"\n        ],\n        \"fixed\": [\n          \"review-source-permissions\"\n        ],\n        \"introduced\": []\n      }\n    ]\n  },\n  \"exam\": {\n    \"cases\": 6,\n    \"correct_before\": 2,\n    \"correct_after\": 4,\n    \"rows\": [\n      {\n        \"id\": \"exam-archive-purpose-expansion\",\n        \"before\": [],\n        \"after\": [\n          \"review-source-permissions\"\n        ],\n        \"expected\": [\n          \"review-source-permissions\"\n        ],\n        \"fixed\": [\n          \"review-source-permissions\"\n        ],\n        \"introduced\": []\n      },\n      {\n        \"id\": \"exam-binance-live-unauthenticated\",\n        \"before\": [],\n        \"after\": [\n          \"review-source-permissions\"\n        ],\n        \"expected\": [\n          \"review-source-permissions\"\n        ],\n        \"fixed\": [\n          \"review-source-permissions\"\n        ],\n        \"introduced\": []\n      },\n      {\n        \"id\": \"exam-coinbase-agent-validation\",\n        \"before\": [],\n        \"after\": [\n          \"review-source-permissions\"\n        ],\n        \"expected\": [\n          \"review-source-permissions\"\n        ],\n        \"fixed\": [\n          \"review-source-permissions\"\n        ],\n        \"introduced\": []\n      },\n      {\n        \"id\": \"exam-document-coinbase-exclusion\",\n        \"before\": [],\n        \"after\": [\n          \"review-source-permissions\"\n        ],\n        \"expected\": [],\n        \"fixed\": [],\n        \"introduced\": [\n          \"review-source-permissions\"\n        ]\n      },\n      {\n        \"id\": \"exam-inspect-nea-schema\",\n        \"before\": [],\n        \"after\": [\n          \"review-source-permissions\"\n        ],\n        \"expected\": [],\n        \"fixed\": [],\n        \"introduced\": [\n          \"review-source-permissions\"\n        ]\n      },\n      {\n        \"id\": \"exam-nea-first-acquisition\",\n        \"before\": [],\n        \"after\": [\n          \"review-source-permissions\"\n        ],\n        \"expected\": [\n          \"review-source-permissions\"\n        ],\n        \"fixed\": [\n          \"review-source-permissions\"\n        ],\n        \"introduced\": []\n      }\n    ]\n  },\n  \"eligible\": false\n}",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "promote",
+        "16857829a4d199b1b43eb4e3"
+      ],
+      "exit": 2,
+      "stdout": "",
+      "stderr": "Promotion refused. Both sets need a repair and a correct unchanged control, with zero new errors."
+    },
+    {
+      "command": [
+        "learn",
+        "public-feed-rights-near-miss",
+        "review-source-permissions",
+        "Before activating a source or materially changing its intended use, run the reviewed source-permission gate for the exact source plan. Check AI use, publication, attribution and commercial restrictions against current primary terms. Public access and a passed routing test confer no permission. Stop an unresolved or disallowed source; record the evidence and a permitted alternative."
+      ],
+      "exit": 0,
+      "stdout": "{\n  \"proposal\": \"695604f50854cd26b5349c9a\",\n  \"base\": 0,\n  \"rule\": {\n    \"id\": \"rule-f15577fbefbd\",\n    \"when\": {\n      \"task\": \"activate-source\"\n    },\n    \"check\": \"review-source-permissions\",\n    \"instruction\": \"Before activating a source or materially changing its intended use, run the reviewed source-permission gate for the exact source plan. Check AI use, publication, attribution and commercial restrictions against current primary terms. Public access and a passed routing test confer no permission. Stop an unresolved or disallowed source; record the evidence and a permitted alternative.\",\n    \"basis\": \"public-feed-rights-near-miss\"\n  },\n  \"replaces\": null,\n  \"case_digest\": \"2f47bae62b9c8a76588bd6571cacbb5cd75ec9e45f965e136f5cdcb16de348d6\"\n}",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "evaluate",
+        "695604f50854cd26b5349c9a"
+      ],
+      "exit": 0,
+      "stdout": "{\n  \"practice\": {\n    \"cases\": 4,\n    \"correct_before\": 2,\n    \"correct_after\": 4,\n    \"rows\": [\n      {\n        \"id\": \"document-source-decision\",\n        \"before\": [],\n        \"after\": [],\n        \"expected\": [],\n        \"fixed\": [],\n        \"introduced\": []\n      },\n      {\n        \"id\": \"inspect-feed-documentation\",\n        \"before\": [],\n        \"after\": [],\n        \"expected\": [],\n        \"fixed\": [],\n        \"introduced\": []\n      },\n      {\n        \"id\": \"open-environment-source\",\n        \"before\": [],\n        \"after\": [\n          \"review-source-permissions\"\n        ],\n        \"expected\": [\n          \"review-source-permissions\"\n        ],\n        \"fixed\": [\n          \"review-source-permissions\"\n        ],\n        \"introduced\": []\n      },\n      {\n        \"id\": \"public-feed-rights-near-miss\",\n        \"before\": [],\n        \"after\": [\n          \"review-source-permissions\"\n        ],\n        \"expected\": [\n          \"review-source-permissions\"\n        ],\n        \"fixed\": [\n          \"review-source-permissions\"\n        ],\n        \"introduced\": []\n      }\n    ]\n  },\n  \"exam\": {\n    \"cases\": 6,\n    \"correct_before\": 2,\n    \"correct_after\": 6,\n    \"rows\": [\n      {\n        \"id\": \"exam-archive-purpose-expansion\",\n        \"before\": [],\n        \"after\": [\n          \"review-source-permissions\"\n        ],\n        \"expected\": [\n          \"review-source-permissions\"\n        ],\n        \"fixed\": [\n          \"review-source-permissions\"\n        ],\n        \"introduced\": []\n      },\n      {\n        \"id\": \"exam-binance-live-unauthenticated\",\n        \"before\": [],\n        \"after\": [\n          \"review-source-permissions\"\n        ],\n        \"expected\": [\n          \"review-source-permissions\"\n        ],\n        \"fixed\": [\n          \"review-source-permissions\"\n        ],\n        \"introduced\": []\n      },\n      {\n        \"id\": \"exam-coinbase-agent-validation\",\n        \"before\": [],\n        \"after\": [\n          \"review-source-permissions\"\n        ],\n        \"expected\": [\n          \"review-source-permissions\"\n        ],\n        \"fixed\": [\n          \"review-source-permissions\"\n        ],\n        \"introduced\": []\n      },\n      {\n        \"id\": \"exam-document-coinbase-exclusion\",\n        \"before\": [],\n        \"after\": [],\n        \"expected\": [],\n        \"fixed\": [],\n        \"introduced\": []\n      },\n      {\n        \"id\": \"exam-inspect-nea-schema\",\n        \"before\": [],\n        \"after\": [],\n        \"expected\": [],\n        \"fixed\": [],\n        \"introduced\": []\n      },\n      {\n        \"id\": \"exam-nea-first-acquisition\",\n        \"before\": [],\n        \"after\": [\n          \"review-source-permissions\"\n        ],\n        \"expected\": [\n          \"review-source-permissions\"\n        ],\n        \"fixed\": [\n          \"review-source-permissions\"\n        ],\n        \"introduced\": []\n      }\n    ]\n  },\n  \"eligible\": true\n}",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "promote",
+        "695604f50854cd26b5349c9a"
+      ],
+      "exit": 0,
+      "stdout": "{\n  \"number\": 1,\n  \"reason\": \"Passed replay\",\n  \"proposal\": \"695604f50854cd26b5349c9a\",\n  \"rules\": [\n    {\n      \"basis\": \"public-feed-rights-near-miss\",\n      \"check\": \"review-source-permissions\",\n      \"id\": \"rule-f15577fbefbd\",\n      \"instruction\": \"Before activating a source or materially changing its intended use, run the reviewed source-permission gate for the exact source plan. Check AI use, publication, attribution and commercial restrictions against current primary terms. Public access and a passed routing test confer no permission. Stop an unresolved or disallowed source; record the evidence and a permitted alternative.\",\n      \"when\": {\n        \"task\": \"activate-source\"\n      }\n    }\n  ],\n  \"report\": {\n    \"practice\": {\n      \"cases\": 4,\n      \"correct_before\": 2,\n      \"correct_after\": 4,\n      \"rows\": [\n        {\n          \"id\": \"document-source-decision\",\n          \"before\": [],\n          \"after\": [],\n          \"expected\": [],\n          \"fixed\": [],\n          \"introduced\": []\n        },\n        {\n          \"id\": \"inspect-feed-documentation\",\n          \"before\": [],\n          \"after\": [],\n          \"expected\": [],\n          \"fixed\": [],\n          \"introduced\": []\n        },\n        {\n          \"id\": \"open-environment-source\",\n          \"before\": [],\n          \"after\": [\n            \"review-source-permissions\"\n          ],\n          \"expected\": [\n            \"review-source-permissions\"\n          ],\n          \"fixed\": [\n            \"review-source-permissions\"\n          ],\n          \"introduced\": []\n        },\n        {\n          \"id\": \"public-feed-rights-near-miss\",\n          \"before\": [],\n          \"after\": [\n            \"review-source-permissions\"\n          ],\n          \"expected\": [\n            \"review-source-permissions\"\n          ],\n          \"fixed\": [\n            \"review-source-permissions\"\n          ],\n          \"introduced\": []\n        }\n      ]\n    },\n    \"exam\": {\n      \"cases\": 6,\n      \"correct_before\": 2,\n      \"correct_after\": 6,\n      \"rows\": [\n        {\n          \"id\": \"exam-archive-purpose-expansion\",\n          \"before\": [],\n          \"after\": [\n            \"review-source-permissions\"\n          ],\n          \"expected\": [\n            \"review-source-permissions\"\n          ],\n          \"fixed\": [\n            \"review-source-permissions\"\n          ],\n          \"introduced\": []\n        },\n        {\n          \"id\": \"exam-binance-live-unauthenticated\",\n          \"before\": [],\n          \"after\": [\n            \"review-source-permissions\"\n          ],\n          \"expected\": [\n            \"review-source-permissions\"\n          ],\n          \"fixed\": [\n            \"review-source-permissions\"\n          ],\n          \"introduced\": []\n        },\n        {\n          \"id\": \"exam-coinbase-agent-validation\",\n          \"before\": [],\n          \"after\": [\n            \"review-source-permissions\"\n          ],\n          \"expected\": [\n            \"review-source-permissions\"\n          ],\n          \"fixed\": [\n            \"review-source-permissions\"\n          ],\n          \"introduced\": []\n        },\n        {\n          \"id\": \"exam-document-coinbase-exclusion\",\n          \"before\": [],\n          \"after\": [],\n          \"expected\": [],\n          \"fixed\": [],\n          \"introduced\": []\n        },\n        {\n          \"id\": \"exam-inspect-nea-schema\",\n          \"before\": [],\n          \"after\": [],\n          \"expected\": [],\n          \"fixed\": [],\n          \"introduced\": []\n        },\n        {\n          \"id\": \"exam-nea-first-acquisition\",\n          \"before\": [],\n          \"after\": [\n            \"review-source-permissions\"\n          ],\n          \"expected\": [\n            \"review-source-permissions\"\n          ],\n          \"fixed\": [\n            \"review-source-permissions\"\n          ],\n          \"introduced\": []\n        }\n      ]\n    },\n    \"eligible\": true\n  },\n  \"case_digest\": \"2f47bae62b9c8a76588bd6571cacbb5cd75ec9e45f965e136f5cdcb16de348d6\"\n}",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "brief",
+        "{\"task\":\"activate-source\",\"source_kind\":\"public\"}"
+      ],
+      "exit": 0,
+      "stdout": "{\n  \"revision\": 1,\n  \"instructions\": [\n    {\n      \"basis\": \"public-feed-rights-near-miss\",\n      \"check\": \"review-source-permissions\",\n      \"id\": \"rule-f15577fbefbd\",\n      \"instruction\": \"Before activating a source or materially changing its intended use, run the reviewed source-permission gate for the exact source plan. Check AI use, publication, attribution and commercial restrictions against current primary terms. Public access and a passed routing test confer no permission. Stop an unresolved or disallowed source; record the evidence and a permitted alternative.\",\n      \"when\": {\n        \"task\": \"activate-source\"\n      }\n    }\n  ]\n}",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "brief",
+        "{\"task\":\"inspect\",\"source_kind\":\"public\"}"
+      ],
+      "exit": 0,
+      "stdout": "{\n  \"revision\": 1,\n  \"instructions\": []\n}",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gate",
+        "{\"task\":\"activate-source\",\"source_kind\":\"public\"}"
+      ],
+      "exit": 1,
+      "stdout": "{\n  \"revision\": 1,\n  \"missing\": [\n    \"review-source-permissions\"\n  ],\n  \"pass\": false\n}",
+      "stderr": ""
+    }
+  ],
+  "provenance": {
+    "recorded_on": "2026-11-13",
+    "python": "3.12.14",
+    "exam_label_reviewer": "independent_opsbook_cases",
+    "reviewer_saw_candidate_rule_before_labelling": false,
+    "cases_now_public_regression_fixtures": true,
+    "path_display": "repository-relative; actual CLI invocations used corresponding absolute paths",
+    "limits": "Routing and source-policy behaviour only; no learner or trading performance claim."
+  }
+}

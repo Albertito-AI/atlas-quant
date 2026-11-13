@@ -1,0 +1,9 @@
+{
+  "id": "rule-f15577fbefbd",
+  "when": {
+    "task": "activate-source"
+  },
+  "check": "review-source-permissions",
+  "instruction": "Before activating a source or materially changing its intended use, run the reviewed source-permission gate for the exact source plan. Check AI use, publication, attribution and commercial restrictions against current primary terms. Public access and a passed routing test confer no permission. Stop an unresolved or disallowed source; record the evidence and a permitted alternative.",
+  "basis": "public-feed-rights-near-miss"
+}
