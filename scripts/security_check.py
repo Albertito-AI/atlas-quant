@@ -17,7 +17,27 @@ TEXT_SUFFIXES = {'.py', '.md', '.toml', '.yml', '.yaml', '.json', '.txt', '.html
 # This one exact, pinned reusable monitor needs scoped Actions write access to
 # retry failures. All other workflows and mutations continue to be rejected.
 APPROVED_ATLAS_PATH = Path('.github/workflows/atlas-flexible-zero-fail.yml')
-APPROVED_ATLAS_CALLER = "name: Atlas Flexible Zero Fail\n\non:\n  push:\n    branches: [main]\n  schedule:\n    - cron: '41 2 * * *'\n  workflow_dispatch:\n\npermissions:\n  contents: read\n\njobs:\n  atlas-zero-fail:\n    permissions:\n      contents: read\n      actions: write\n      issues: write\n    uses: Albertito-AI/Albertito-AI/.github/workflows/atlas-flexible-zero-fail.yml@2e849a36fd6a2b93d1a968efd4fcccdb7523132b\n"
+APPROVED_ATLAS_MONITOR_COMMIT = 'c218c0ec96151d9682c3bc78e58638546fbdc19d'
+APPROVED_ATLAS_CALLER = f"""name: Atlas Flexible Zero Fail
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '41 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  atlas-zero-fail:
+    permissions:
+      contents: read
+      actions: write
+      issues: write
+    uses: Albertito-AI/Albertito-AI/.github/workflows/atlas-flexible-zero-fail.yml@{APPROVED_ATLAS_MONITOR_COMMIT}
+"""
 
 SECRET_PATTERNS = (
     ('private-key', re.compile(r'-----BEGIN (?:RSA |EC |OPENSSH |DSA )?PRIVATE KEY-----')),
