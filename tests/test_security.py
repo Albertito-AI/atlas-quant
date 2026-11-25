@@ -54,7 +54,7 @@ class SecurityPolicyTests(unittest.TestCase):
         self.assertTrue(any(rule == 'write-token-permission' for _, rule in scanner.inspect_workflow(caller, Path('.github/workflows/other.yml'))))
         for mutation in (
             caller.replace('actions: write', 'contents: write'),
-            caller.replace('2e849a36fd6a2b93d1a968efd4fcccdb7523132b', '0' * 40),
+            caller.replace(scanner.APPROVED_ATLAS_MONITOR_COMMIT, '0' * 40),
             caller + '  extra-job: {}\n',
         ):
             with self.subTest(mutation=mutation[-50:]):
